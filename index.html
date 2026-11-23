@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0b0a">
+<title>IqraZone – জ্ঞানের আলোয় আলোকিত জীবন</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== ১. থিম (প্রতিটি থিমের রঙ এখানে; নতুন থিম যোগ করতে একটি [data-theme=নাম] ব্লক কপি করুন) ===== */
+:root,[data-theme=gold]{--bg:#0b0b0a;--card:#131312;--ink:#f4ecd8;--mut:#a79e89;--gold:#d4a22a;--gold2:#f1cf74;--glow:#d4a22a40;--hero:#d4a22a26;
+--surf:#1a1914;--surf2:#15140f;--line:#2c2a22;--line2:#3a3526;--ga:#171612;--gb:#0f0f0e;--tia:#1c1b16;--tib:#0d0d0c;--tin:#0d0d0c;
+--ring:#d4a22a66;--tint:#d4a22a2e;--ongold:#17120a;--navbg:#121210f2;--dlg:#12120f;--mapf:invert(.92) hue-rotate(180deg) saturate(.7)}
+[data-theme=emerald]{--bg:#06130e;--card:#0c1e16;--ink:#e6f4ea;--mut:#8fb09d;--gold:#34c38f;--gold2:#8be9c0;--glow:#34c38f40;--hero:#34c38f22;
+--surf:#10231a;--surf2:#0c1c14;--line:#1d3a2c;--line2:#25503b;--ga:#0f2419;--gb:#08150e;--tia:#12281d;--tib:#07130d;--tin:#07130d;
+--ring:#34c38f66;--tint:#34c38f2e;--ongold:#04150d;--navbg:#0a1a12f2;--dlg:#0a1a12;--mapf:invert(.92) hue-rotate(180deg) saturate(.7)}
+[data-theme=paper]{--bg:#fbf5e6;--card:#fffaf0;--ink:#2b2417;--mut:#6b604a;--gold:#b7791f;--gold2:#8a5a0b;--glow:#b7791f33;--hero:#e9c46a40;
+--surf:#fff3d6;--surf2:#fffdf6;--line:#e4d6b0;--line2:#d9c690;--ga:#fffdf7;--gb:#fbf1d8;--tia:#fffaf0;--tib:#f6e9c6;--tin:#fffaf0;
+--ring:#b7791f66;--tint:#b7791f22;--ongold:#fff8e6;--navbg:#fffaf0f2;--dlg:#fffaf0;--mapf:none}
+[data-theme=sapphire]{--bg:#060a14;--card:#0d1424;--ink:#e8eefc;--mut:#93a0bf;--gold:#5b9dff;--gold2:#a9ccff;--glow:#5b9dff40;--hero:#5b9dff26;
+--surf:#101a30;--surf2:#0b1224;--line:#1e2c4d;--line2:#2a3b66;--ga:#0f1930;--gb:#070d1b;--tia:#121d36;--tib:#070c19;--tin:#070c19;
+--ring:#5b9dff66;--tint:#5b9dff2e;--ongold:#04101f;--navbg:#0a1222f2;--dlg:#0a1222;--mapf:invert(.92) hue-rotate(180deg) saturate(.7)}
+[data-theme=sepia]{--bg:#17110b;--card:#211810;--ink:#f3e6d3;--mut:#b3a187;--gold:#d08a4e;--gold2:#f0c08a;--glow:#d08a4e40;--hero:#d08a4e26;
+--surf:#261b11;--surf2:#1f160e;--line:#3a2a1b;--line2:#4d3822;--ga:#241a10;--gb:#150f09;--tia:#2a1d12;--tib:#140e08;--tin:#140e08;
+--ring:#d08a4e66;--tint:#d08a4e2e;--ongold:#1c1005;--navbg:#1b130cf2;--dlg:#1b130c;--mapf:invert(.9) hue-rotate(180deg) saturate(.6)}
+
+:root{--font:'Hind Siliguri','Noto Sans Bengali',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;padding-bottom:120px;
+background-image:radial-gradient(circle at 85% -5%,var(--hero),transparent 45%);background-attachment:fixed;transition:background-color .3s,color .3s}
+:focus-visible{outline:3px solid var(--gold2);outline-offset:3px}
+.wrap{max-width:960px;margin:auto;padding:0 18px}
+
+/* ===== ২. টপ বার ===== */
+.top{display:flex;align-items:center;gap:12px;padding:18px 0 8px}
+.logo{width:52px;height:52px;border-radius:16px;border:2px solid var(--gold);display:grid;place-items:center;background:var(--surf);box-shadow:0 0 14px var(--glow)}
+.top h1{font-size:1.55rem;line-height:1.1;margin-right:auto}
+.top h1 small{display:block;font-size:.8rem;font-weight:400;color:var(--mut)}
+.ibtn{width:46px;height:46px;border-radius:14px;border:1px solid var(--line);background:var(--surf);display:grid;place-items:center;cursor:pointer}
+svg{fill:none;stroke:var(--gold2);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+/* ===== ৩. আজকের কার্ড ===== */
+.hello{margin:10px 0 14px}
+.hello p{color:var(--mut)}
+.hello h2{font-size:1.35rem;font-weight:600}
+.hello .dt{font-size:.9rem;color:var(--mut);margin-top:2px}
+.card{border:1.5px solid var(--gold);border-radius:24px;background:linear-gradient(180deg,var(--ga),var(--gb));padding:16px;box-shadow:0 0 22px var(--glow)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
+.row span{color:var(--mut);font-size:.9rem}
+.clk{font-size:1.5rem;font-weight:600;color:var(--gold2);border:1px solid var(--ring);border-radius:14px;padding:2px 14px;background:var(--tint)}
+.qt{font-size:1.12rem;line-height:1.7}
+.qt cite{display:block;margin-top:6px;color:var(--gold);font-size:.88rem;font-style:normal}
+
+/* ===== ৪. সার্চ ও সেকশন হেডিং ===== */
+#q{width:100%;margin:18px 0 4px;padding:13px 18px;border-radius:16px;border:1px solid var(--line2);background:var(--surf2);color:var(--ink);font:inherit}
+.sh{display:flex;justify-content:space-between;align-items:baseline;margin:28px 0 14px}
+.sh h2{font-size:1.45rem;font-weight:600}
+.sh span{color:var(--mut)}
+.sh a{color:var(--gold2);font-size:.9rem;cursor:pointer}
+
+/* ===== ৫. আইকন টাইল ===== */
+.sg{display:grid;grid-template-columns:repeat(4,1fr);gap:18px 12px}
+@media(min-width:760px){.sg{grid-template-columns:repeat(6,1fr);gap:24px 18px}}
+.svc{background:none;border:0;color:var(--ink);font:inherit;text-align:center;cursor:pointer;padding:0}
+.tile{display:grid;place-items:center;aspect-ratio:1;border-radius:26px;border:2px solid var(--gold);
+background:linear-gradient(160deg,var(--tia),var(--tib));
+box-shadow:0 0 16px var(--glow),inset 0 0 0 5px var(--tin),inset 0 0 0 6.5px var(--ring);transition:box-shadow .2s,transform .2s}
+.svc:hover .tile{box-shadow:0 0 28px var(--glow),inset 0 0 0 5px var(--tin),inset 0 0 0 6.5px var(--gold);transform:translateY(-2px)}
+.tile svg{width:40%;height:40%}
+.svc b{display:block;margin-top:9px;font-size:.95rem;font-weight:500;line-height:1.3}
+.svc small{display:block;color:var(--mut);font-size:.76rem}
+
+/* ===== ৬. ভেতরের পাতা, কোটেশন, ম্যাপ, কুইজ ===== */
+.ph{display:flex;align-items:center;gap:14px;margin:18px 0}
+.ph .tile{width:72px;flex:none}
+.ph h2{font-size:1.7rem;line-height:1.2}.ph small{color:var(--mut)}
+.quote{position:relative;border:1.5px solid var(--gold);border-radius:22px;padding:18px 18px 16px 52px;background:var(--surf2);box-shadow:0 0 18px var(--glow);margin-bottom:6px}
+.quote::before{content:"“";position:absolute;left:14px;top:-2px;font-size:4rem;color:var(--gold);line-height:1}
+.back{color:var(--gold2);cursor:pointer;background:none;border:0;font:inherit;padding:6px 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.chip{border:1px solid var(--ring);background:var(--surf2);color:var(--ink);padding:6px 14px;border-radius:999px;font:inherit;font-size:.9rem;cursor:pointer}
+.chip.on,.chip.ok{background:var(--gold);color:var(--ongold);border-color:var(--gold)}.chip.no{background:#a93a32;color:#fff;border-color:#a93a32}
+iframe{width:100%;height:min(58vh,440px);border:2px solid var(--gold);border-radius:22px;box-shadow:0 0 18px var(--glow);filter:var(--mapf)}
+.q{border:1px solid var(--line2);border-radius:18px;padding:14px;margin-bottom:12px;background:var(--card)}
+.q div{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.moreq{margin-top:12px}
+.moreq .quote{margin-top:12px}
+
+/* ===== ৭. পপআপ ও থিম বাছাই ===== */
+dialog{background:var(--dlg);color:var(--ink);border:2px solid var(--gold);border-radius:26px;width:calc(100% - 32px);max-width:420px;padding:22px;margin:auto;box-shadow:0 0 40px var(--glow)}
+dialog::backdrop{background:#000c}
+dialog .tile{width:84px;margin:0 auto 12px}
+dialog h3{text-align:center}dialog p{color:var(--mut);margin:10px 0;text-align:center}
+dialog ul{margin:10px 0 10px 20px}dialog a{color:var(--gold2)}
+.cl{display:block;margin:14px auto 0}
+.thl{display:grid;gap:10px;margin-top:14px}
+.th{display:flex;align-items:center;gap:12px;width:100%;padding:10px 14px;border-radius:16px;border:1px solid var(--line2);background:var(--surf2);color:var(--ink);font:inherit;cursor:pointer;text-align:left}
+.th.on{border-color:var(--gold);background:var(--tint)}
+.sw{width:34px;height:34px;border-radius:50%;border:2px solid;flex:none}
+
+/* ===== ৮. নিচের নেভিগেশন ===== */
+nav{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom,0px));width:calc(100% - 24px);max-width:520px;
+display:flex;justify-content:space-around;background:var(--navbg);border:1px solid var(--line2);border-radius:28px;padding:8px 6px;backdrop-filter:blur(8px);z-index:10}
+nav button{background:none;border:0;color:var(--mut);font:inherit;font-size:.78rem;display:grid;justify-items:center;gap:2px;padding:6px 12px;border-radius:20px;cursor:pointer}
+nav button svg{width:24px;height:24px;stroke:currentColor}
+nav button.on{background:var(--tint);color:var(--gold2)}
+.empty{color:var(--mut);padding:24px 0;text-align:center}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<nav id="nav" aria-label="প্রধান মেনু"></nav>
+<dialog id="m"></dialog>
+
+<script>
+/* =====================================================================
+   ১. আইকন লাইব্রেরি (SVG path) – নতুন আইকন যোগ করতে এখানে একটি লাইন বসান
+   ===================================================================== */
+const I={
+home:"M3 11l9-8 9 8 M5 10v10h14V10 M10 20v-6h4v6",search:"M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14z M21 21l-5-5",
+mosque:"M3 21V11h3v10 M18 21V11h3v10 M6 21v-6a6 6 0 0 1 12 0v6 M12 4v3 M3 21h18",
+quran:"M6 3h12v18H6z M6 17h12 M12 7l.9 1.8 2 .3-1.4 1.4.3 2-1.8-1-1.8 1 .3-2-1.4-1.4 2-.3z",
+scroll:"M8 3h10v14a3 3 0 0 1-3 3H5a3 3 0 0 0 3-3z M5 20a3 3 0 0 1-3-3V6h3 M11 8h4 M11 12h4",
+scale:"M12 3v18 M5 21h14 M4 7h16 M4 7l-2 7a3 3 0 0 0 4 0z M20 7l-2 7a3 3 0 0 0 4 0z",
+heart:"M20.8 5a5.500 5.500 0 0 0-8.800 0 5.500 5.500 0 0 0-8.800 0c-2 2.500-.5 6 8.800 14 9.300-8 10.800-11.500 8.800-14z",
+moon:"M21 12.800A9 9 0 1 1 11.200 3a7 7 0 0 0 9.800 9.800z",
+hour:"M6 2h12 M6 22h12 M7 2c0 6 5 6 5 10s-5 4-5 10 M17 2c0 6-5 6-5 10s5 4 5 10",
+lang:"M4 5h9 M8 3v2 M6 5c0 5 4 8 7 9 M12 5c0 4-3 7-7 9 M13 21l4-10 4 10 M14.500 18h5",
+school:"M3 10l9-6 9 6 M5 10v10 M19 10v10 M9 20v-6h6v6 M3 20h18",
+book:"M4 4h6a3 3 0 0 1 2 1 3 3 0 0 1 2-1h6v15h-6a3 3 0 0 0-2 1 3 3 0 0 0-2-1H4z M12 5v15",
+grad:"M22 10 12 5 2 10l10 5 10-5z M6 12v5c3 2 9 2 12 0v-5",
+target:"M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10z M12 11v2",
+doc:"M5 3h14v18H5z M8 8h8 M8 12h8 M8 16h5",
+flag:"M5 21V4 M5 4h13l-2 4 2 4H5",
+globe:"M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z M2 12h20 M12 2c3 3 3 17 0 20 M12 2c-3 3-3 17 0 20",
+flask:"M9 2h6 M10 2v6L4 20a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2l-6-12V2",
+news:"M4 4h13v16H4z M17 8h3v10a2 2 0 0 1-2 2 M7 8h7 M7 12h7 M7 16h4",
+check:"M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z M8 12l3 3 5-6",
+map:"M1 6l7-3 8 3 7-3v15l-7 3-8-3-7 3z M8 3v15 M16 6v15",
+pin:"M12 22s7-6 7-12a7 7 0 1 0-14 0c0 6 7 12 7 12z M12 12a2.500 2.500 0 1 0 0-5 2.500 2.500 0 0 0 0 5z",
+waves:"M2 8c3-3 5 3 10 0s7 3 10 0 M2 14c3-3 5 3 10 0s7 3 10 0 M2 20c3-3 5 3 10 0s7 3 10 0",
+compass:"M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z M15.500 8.500l-2 5-5 2 2-5z",
+bag:"M3 7h18v13H3z M9 7V4h6v3 M3 13h18",
+medal:"M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12z M8.500 14L7 22l5-3 5 3-1.500-8",
+coin:"M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z M14.500 9a2.500 2 0 0 0-5 0c0 3 5 1.500 5 4.500a2.500 2 0 0 1-5 0 M12 6v2 M12 16v2",
+users:"M9 11a3.500 3.500 0 1 0 0-7 3.500 3.500 0 0 0 0 7z M2 21c0-4 3-6 7-6s7 2 7 6 M17 4a3.500 3.500 0 0 1 0 7 M22 21c0-3-2-5-4-5.500",
+calc:"M5 3h14v18H5z M8 7h8 M8 12h2 M14 12h2 M8 16h2 M14 16h2",
+mic:"M12 2a3 3 0 0 1 3 3v6a3 3 0 0 1-6 0V5a3 3 0 0 1 3-3z M5 11a7 7 0 0 0 14 0 M12 18v4",
+bolt:"M13 2L4 14h7l-1 8 9-12h-7z",leaf:"M5 19c0-9 5-14 15-14 0 10-5 15-14 15 M5 19l8-8",
+code:"M8 6l-6 6 6 6 M16 6l6 6-6 6",laptop:"M4 5h16v11H4z M2 20h20",
+shield:"M12 2l8 3v6c0 5-3.500 9-8 11-4.500-2-8-6-8-11V5z M9 12l2 2 4-4",
+pen:"M12 20h9 M16.500 3.500a2.100 2.100 0 0 1 3 3L7 19l-4 1 1-4z",
+plane:"M22 2L11 13 M22 2l-7 20-4-9-9-4z",
+bulb:"M9 18h6 M10 21h4 M12 3a6 6 0 0 0-4 10c1 1 1 2 1 3h6c0-1 0-2 1-3a6 6 0 0 0-4-10z",
+clock:"M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z M12 6v6l4 2",
+palette:"M12 3a9 9 0 1 0 0 18c1.500 0 2-1 1.500-2s0-2 1.500-2h2a4 4 0 0 0 4-4c0-5-4-10-9-10z M7.500 11h.01 M10 7.500h.01 M15 7.500h.01",
+star:"M12 2l3 7 7 .6-5.300 4.700 1.600 7.200L12 17.800 5.700 21.500l1.600-7.200L2 9.600 9 9z",
+smile:"M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z M8 14s1.500 2 4 2 4-2 4-2 M9 9h.01 M15 9h.01",
+chart:"M3 3v18h18 M7 15l4-4 3 3 5-6",
+library:"M3 4h4v16H3z M9 4h4v16H9z M15 6l4-1 2 15-4 1z",
+sprout:"M12 22v-9 M12 13c0-4-3-6-7-6 0 4 3 6 7 6z M12 11c0-3 2-5 6-5 0 3-2 5-6 5z",
+brain:"M9 4a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 6 1V4a3 3 0 0 0-3 0z M15 4a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-6 1"
+};
+const svg=n=>`<svg viewBox="0 0 24 24"><path d="${I[n]}"/></svg>`;
+
+/* =====================================================================
+   ২. থিম তালিকা: [id, নাম, ব্যাকগ্রাউন্ড রং, অ্যাকসেন্ট রং]
+   ===================================================================== */
+const TH=[
+ ['gold','সোনালি রাত','#0b0b0a','#d4a22a'],
+ ['emerald','ইসলামিক সবুজ','#06130e','#34c38f'],
+ ['paper','দিনের আলো','#fbf5e6','#b7791f'],
+ ['sapphire','নীল আকাশ','#060a14','#5b9dff'],
+ ['sepia','লাইব্রেরি সেপিয়া','#17110b','#d08a4e']
+];
+function applyTheme(id){
+  const t=TH.find(x=>x[0]===id)||TH[0];
+  document.documentElement.dataset.theme=t[0];
+  document.querySelector('meta[name=theme-color]').content=t[2];
+  try{localStorage.setItem('iz-theme',t[0])}catch(e){}
+}
+let savedTheme='gold';try{savedTheme=localStorage.getItem('iz-theme')||'gold'}catch(e){}
+applyTheme(savedTheme);
+
+/* =====================================================================
+   ৩. মূল ডেটা – পুরো সাইটের কন্টেন্ট এখানে
+   বিভাগের ফিল্ড:  id | bn (নাম) | en | ic (আইকন) | q:[ফিচার্ড কোটেশন, উৎস]
+                   m:[[কোটেশন, উৎস],...] (আরও কোটেশন) | s:'map'/'quiz' (ঐচ্ছিক)
+   টপিক:  [বাংলা নাম, English, আইকন, links(ঐচ্ছিক)]
+   links উদাহরণ:  ['আল-কুরআন','Al-Quran','quran',[{t:'সূরা ফাতিহা নোট',u:'https://...'}]]
+   নতুন বিভাগ যোগ করলে নিচের GROUPS-এও id বসান।
+   ===================================================================== */
+const C=[
+{id:'islam',bn:'ইসলামিক শিক্ষা ও আদর্শ',en:'Islamic Studies & Values',ic:'mosque',q:['পড়ুন আপনার প্রভুর নামে, যিনি সৃষ্টি করেছেন।','সূরা আলাক, ৯৬:১'],
+ m:[['যে ব্যক্তি জ্ঞান অন্বেষণের পথে চলে, আল্লাহ তার জন্য জান্নাতের পথ সহজ করে দেন।','সহীহ মুসলিম'],['বলুন, যারা জানে এবং যারা জানে না, তারা কি সমান?','সূরা যুমার, ৩৯:৯'],['তোমরা সত্যবাদিতা আঁকড়ে ধরো, কারণ সত্য কল্যাণের পথ দেখায়।','সহীহ বুখারী ও মুসলিম']],t:[
+ ['আল-কুরআন','Al-Quran','quran'],['হাদিস','Hadith','scroll'],['ফিকহ','Fiqh','scale'],['আকীদা','Aqeedah','shield'],
+ ['সিরাত','Seerah','moon'],['ইসলামি মনীষী','Scholars','star'],['দোয়া','Dua','heart'],['আরবি ভাষা','Arabic','lang']]},
+{id:'general',bn:'একাডেমিক ও জেনারেল পড়াশোনা',en:'Academic & General Study',ic:'grad',q:['শিক্ষাই সবচেয়ে শক্তিশালী অস্ত্র, যা দিয়ে বিশ্ব বদলানো যায়।','নেলসন ম্যান্ডেলা'],
+ m:[['বলুন, হে আমার প্রভু, আমার জ্ঞান বৃদ্ধি করে দিন।','সূরা ত্বহা, ২০:১১৪'],['শিক্ষা হলো ভবিষ্যতের পাসপোর্ট।','ম্যালকম এক্স'],['শেখার কোনো বয়স নেই, শুধু শুরু করার সাহস দরকার।','IqraZone']],t:[
+ ['স্কুল','School','school'],['কলেজ','College','book'],['মাদ্রাসা','Madrasa','mosque'],['বিশ্ববিদ্যালয়','University','grad'],['ভর্তি প্রস্তুতি','Admission','target'],['পরীক্ষা','Exam','doc']]},
+{id:'gk',bn:'সাধারণ জ্ঞান ও বিশ্বপরিচয়',en:'General Knowledge & World',ic:'globe',s:'quiz',q:['জ্ঞানের চেয়ে মূল্যবান সম্পদ আর কিছু নেই।','প্রচলিত প্রবাদ'],
+ m:[['আল্লাহর বান্দাদের মধ্যে জ্ঞানীরাই তাঁকে বেশি ভয় করে।','সূরা ফাতির, ৩৫:২৮'],['আজ যা জানো না, তা শেখার সুযোগ আজই।','IqraZone']],t:[
+ ['বাংলাদেশ','Bangladesh','flag'],['আন্তর্জাতিক','International','globe'],['ইতিহাস','History','hour'],['বিজ্ঞান','Science','flask'],['সাম্প্রতিক','Current Affairs','news'],['প্রশ্নোত্তর','Q&A','check']]},
+{id:'job',bn:'চাকরি ও ক্যারিয়ার প্রস্তুতি',en:'Job & Career Preparation',ic:'bag',q:['প্রস্তুতি যত গভীর, সুযোগ তত কাছে।','IqraZone'],
+ m:[['পরিশ্রম সৌভাগ্যের জননী।','প্রচলিত প্রবাদ'],['প্রতিদিনের ছোট অগ্রগতিই বড় সাফল্যের ভিত্তি।','IqraZone'],['আর মানুষ তা-ই পায়, যা সে চেষ্টা করে।','সূরা নাজম, ৫৩:৩৯']],t:[
+ ['বিসিএস','BCS','medal'],['ব্যাংক জব','Bank Job','coin'],['শিক্ষক নিবন্ধন','NTRCA','users'],['বিগত প্রশ্ন','Past Papers','doc'],['গণিত','Math','calc'],['ভাইভা','Viva','mic'],['সিভি ও ইন্টারভিউ','CV & Interview','pen']]},
+{id:'map',bn:'মানচিত্র, ভূগোল ও ভ্রমণ',en:'Maps, Geography & Exploration',ic:'map',s:'map',q:['ভ্রমণ মানুষকে বিনয়ী করে, দেখায় পৃথিবীতে সে কত ক্ষুদ্র।','গুস্তাভ ফ্লবেয়ার'],
+ m:[['বলুন, তোমরা পৃথিবীতে ভ্রমণ করো এবং দেখো, তিনি কীভাবে সৃষ্টির সূচনা করেছেন।','সূরা আনকাবুত, ২৯:২০'],['নিজের দেশকে জানো, তারপর পৃথিবীকে জানো।','IqraZone']],t:[
+ ['বাংলাদেশ মানচিত্র','BD Map','pin'],['ঐতিহাসিক স্থান','Heritage','mosque'],['নদ-নদী','Rivers','waves'],['বিশ্ব মানচিত্র','World','globe'],['অ্যাটলাস','Atlas','compass']]},
+{id:'history',bn:'ইতিহাস, ঐতিহ্য ও সভ্যতা',en:'History, Heritage & Civilization',ic:'hour',q:['তারা কি পৃথিবীতে ভ্রমণ করেনি? করলে দেখত, তাদের পূর্ববর্তীদের পরিণতি কেমন হয়েছিল।','সূরা ইউসুফ, ১২:১০৯'],
+ m:[['অতীত থেকে শেখো, বর্তমানে কাজ করো, ভবিষ্যতের জন্য প্রস্তুত হও।','IqraZone'],['ইতিহাস শুধু অতীতের গল্প নয়, আগামীর পথনির্দেশ।','IqraZone']],t:[
+ ['ইসলামের ইতিহাস','Islamic History','hour'],['বাংলার ইতিহাস','Bengal History','scroll'],['মুক্তিযুদ্ধ','Liberation War','flag'],['বিশ্বসভ্যতা','Civilizations','globe'],['মুসলিম বিজ্ঞানী','Muslim Scientists','flask'],['প্রত্নতত্ত্ব ও ঐতিহ্য','Heritage','mosque']]},
+{id:'stem',bn:'বিজ্ঞান ও গণিত',en:'Science & Math',ic:'flask',q:['প্রকৃতির বই লেখা হয়েছে গণিতের ভাষায়।','গ্যালিলিও'],
+ m:[['তিনিই সূর্যকে করেছেন দীপ্তিময় এবং চাঁদকে আলোকময়।','সূরা ইউনুস, ১০:৫'],['কল্পনা জ্ঞানের চেয়েও গুরুত্বপূর্ণ।','আলবার্ট আইনস্টাইন']],t:[
+ ['পদার্থ','Physics','bolt'],['রসায়ন','Chemistry','flask'],['জীববিজ্ঞান','Biology','leaf'],['গণিত','Mathematics','calc'],['দৈনন্দিন বিজ্ঞান','Everyday Science','bulb']]},
+{id:'ict',bn:'প্রযুক্তি, আইসিটি ও আধুনিক দক্ষতা',en:'Technology & Modern Skills',ic:'code',q:['কোড লেখো এমনভাবে, যেন অন্য কেউ পড়ে বুঝতে পারে।','প্রোগ্রামারদের পরামর্শ'],
+ m:[['প্রযুক্তি হোক কল্যাণের হাতিয়ার, ক্ষতির নয়।','IqraZone'],['যে শেখা থামিয়ে দেয়, সে পিছিয়ে পড়ে।','IqraZone']],t:[
+ ['ওয়েব ডেভেলপমেন্ট','Web Dev','code'],['পাইথন','Python','laptop'],['আইসিটি','ICT','laptop'],['সাইবার নিরাপত্তা','Cyber Safety','shield'],['ফ্রিল্যান্সিং','Freelancing','bag'],['কৃত্রিম বুদ্ধিমত্তা','AI Basics','brain']]},
+{id:'lang',bn:'ভাষা, সাহিত্য ও রচনাশৈলী',en:'Language, Literature & Writing',ic:'lang',q:['যার ভাষা যত সমৃদ্ধ, তার ভাবনা তত বিস্তৃত।','IqraZone'],
+ m:[['তাঁর নিদর্শনের মধ্যে রয়েছে তোমাদের ভাষা ও বর্ণের বৈচিত্র্য।','সূরা রূম, ৩০:২২'],['নিজের ভাষাকে ভালোবাসো, অন্য ভাষাকে সম্মান করো।','IqraZone']],t:[
+ ['বাংলা ব্যাকরণ','Bangla','pen'],['ইংরেজি','English','lang'],['আরবি','Arabic','lang'],['রচনা ও চিঠি','Writing','pen'],['সাহিত্য','Literature','book']]},
+{id:'kids',bn:'শিশু শিক্ষা কর্নার',en:'Kids Corner',ic:'smile',q:['তোমাদের মধ্যে সর্বোত্তম সে, যে কুরআন শেখে ও শেখায়।','সহীহ বুখারী'],
+ m:[['শিশুর মনে ভালো অভ্যাসের বীজ বুনে দাও, সে বড় হয়ে ফল দেবে।','IqraZone'],['খেলতে খেলতে শেখাই সবচেয়ে মজার শেখা।','IqraZone']],t:[
+ ['বর্ণমালা','Alphabet','pen'],['ছড়া ও গল্প','Rhymes & Stories','book'],['নৈতিক গল্প','Moral Tales','heart'],['নামাজ ও দোয়া শিক্ষা','Salah & Dua','mosque'],['ইংরেজি ABC','English ABC','lang'],['ছবি আঁকা','Drawing','palette']]},
+{id:'books',bn:'বই, লাইব্রেরি ও লেখালেখি',en:'Books & Library',ic:'library',q:['একটি ভালো বই একশো বন্ধুর সমান।','প্রচলিত প্রবাদ'],
+ m:[['পড়া শেষ করার আগে লেখা শুরু করো না, আবার লেখা না শুরু করলে পড়াও অসম্পূর্ণ।','IqraZone'],['যে বই পড়ে, সে হাজার জীবন বাঁচে।','IqraZone']],t:[
+ ['বই রিভিউ','Book Review','book'],['ইসলামি বই','Islamic Books','quran'],['ই-বুক','E-Books','laptop'],['পাঠ্যবই','Textbooks','school'],['লেখক পরিচিতি','Authors','pen']]},
+{id:'self',bn:'আত্মউন্নয়ন, নৈতিকতা ও জীবনদর্শন',en:'Self-Development & Ethics',ic:'sprout',q:['নিশ্চয়ই আল্লাহ কোনো জাতির অবস্থা পরিবর্তন করেন না, যতক্ষণ না তারা নিজেরা নিজেদের অবস্থা পরিবর্তন করে।','সূরা রা‘দ, ১৩:১১'],
+ m:[['আজকের ছোট একটি ভালো কাজই আগামীর বড় পরিবর্তনের সূচনা।','IqraZone'],['সময়ের মূল্য দাও, সময় তোমার মূল্য বাড়াবে।','IqraZone'],['নিজেকে জয় করাই সবচেয়ে বড় জয়।','প্রচলিত প্রবাদ']],t:[
+ ['চরিত্র গঠন','Character','heart'],['সময়ানুবর্তিতা','Punctuality','clock'],['নেতৃত্ব','Leadership','users'],['মানসিক দৃঢ়তা','Resilience','brain'],['কৃতজ্ঞতা','Gratitude','star'],['যোগাযোগ দক্ষতা','Communication','mic']]},
+{id:'exam',bn:'পরীক্ষা, কুইজ ও অনুশীলন',en:'Exams, Quizzes & Practice',ic:'check',s:'quiz',q:['আর মানুষ তা-ই পায়, যা সে চেষ্টা করে।','সূরা নাজম, ৫৩:৩৯'],
+ m:[['অনুশীলনই দক্ষতার মা।','প্রচলিত প্রবাদ'],['ভুল করা মানে শেখার সুযোগ পাওয়া।','IqraZone'],['লক্ষ্য ঠিক করো, ধাপে ধাপে এগোও।','IqraZone']],t:[
+ ['মডেল টেস্ট','Model Test','doc'],['প্রশ্নব্যাংক','Question Bank','book'],['সেলফ অ্যাসেসমেন্ট','Self Assessment','chart'],['MCQ অনুশীলন','MCQ Practice','check'],['লিখিত প্রস্তুতি','Written Prep','pen']]},
+{id:'career',bn:'উচ্চশিক্ষা ও বিদেশে ক্যারিয়ার',en:'Higher Study & Abroad',ic:'plane',q:['দক্ষতাই আগামী দিনের মুদ্রা।','IqraZone'],
+ m:[['স্বপ্ন দেখো বড়, শুরু করো ছোট থেকে।','IqraZone'],['সঠিক পরিকল্পনা অর্ধেক সাফল্য।','প্রচলিত প্রবাদ']],t:[
+ ['স্কলারশিপ','Scholarship','medal'],['IELTS / GRE','IELTS / GRE','mic'],['ফ্রিল্যান্সিং','Freelancing','laptop'],['ক্যারিয়ার প্ল্যান','Career Plan','target']]},
+{id:'life',bn:'স্বাস্থ্য ও সুস্থ জীবন',en:'Health & Wellbeing',ic:'heart',q:['দুটি নিয়ামতে বহু মানুষ প্রতারিত: সুস্থতা ও অবসর।','সহীহ বুখারী'],
+ m:[['তোমার শরীরের তোমার উপর অধিকার আছে।','সহীহ বুখারী'],['সুস্থ দেহ, সুস্থ মন, সুস্থ জীবন।','প্রচলিত প্রবাদ']],t:[
+ ['প্রাথমিক চিকিৎসা','First Aid','heart'],['মানসিক সুস্থতা','Wellbeing','bulb'],['খাদ্য ও পুষ্টি','Nutrition','leaf'],['ব্যায়াম ও ঘুম','Fitness & Sleep','bolt']]},
+{id:'eco',bn:'অর্থ, ব্যবসা ও উদ্যোক্তা',en:'Finance & Entrepreneurship',ic:'chart',q:['আল্লাহ ব্যবসাকে হালাল করেছেন এবং সুদকে হারাম করেছেন।','সূরা বাকারা, ২:২৭৫'],
+ m:[['ছোট সঞ্চয়ই বড় নিরাপত্তার ভিত্তি।','IqraZone'],['সততা ব্যবসার সবচেয়ে বড় পুঁজি।','IqraZone']],t:[
+ ['অর্থ ব্যবস্থাপনা','Finance','coin'],['ইসলামি অর্থনীতি','Islamic Economics','scale'],['উদ্যোক্তা হওয়া','Entrepreneurship','bulb'],['সঞ্চয় ও বিনিয়োগ','Saving','chart']]},
+{id:'tips',bn:'স্টাডি টিপস',en:'Study Tips',ic:'bulb',q:['জ্ঞান অর্জন করা প্রত্যেক মুসলিমের উপর ফরজ।','সুনান ইবনে মাজাহ'],
+ m:[['ছোট ছোট বিরতিতে মস্তিষ্ক সতেজ থাকে।','IqraZone'],['কঠিন বিষয় আগে পড়ো, যখন মন সবচেয়ে সতেজ।','IqraZone']],t:[
+ ['সময় ব্যবস্থাপনা','Time','clock'],['ফোকাস','Pomodoro','target'],['স্মরণশক্তি','Memory','brain'],['নোট তৈরি','Notes','doc']]}
+];
+
+/* হোম পাতার সেকশন: [বাংলা শিরোনাম, English, [বিভাগের id], টপিক দেখাবে কি না] */
+const GROUPS=[
+ ['ইসলামিক শিক্ষা','Islamic Studies',['islam'],1],
+ ['একাডেমিক','Academic',['general','stem','lang','ict','kids','books'],0],
+ ['জ্ঞান ও প্রস্তুতি','Explore & Prepare',['gk','map','history','exam','job','career'],0],
+ ['জীবন ও অভ্যাস','Life Skills',['self','life','eco','tips'],0]
+];
+
+/* কুইজ: {q:প্রশ্ন, o:[অপশন], a:সঠিক উত্তরের ইনডেক্স (০ থেকে)} */
+const QUIZ=[
+ {q:'বাংলাদেশের জাতীয় ফুল কোনটি?',o:['গোলাপ','শাপলা','বেলি','কদম'],a:1},
+ {q:'বাংলাদেশের স্বাধীনতা দিবস কবে?',o:['১৬ ডিসেম্বর','২১ ফেব্রুয়ারি','২৬ মার্চ','১৭ এপ্রিল'],a:2},
+ {q:'পৃথিবীর বৃহত্তম মহাসাগর কোনটি?',o:['আটলান্টিক','প্রশান্ত','ভারত','আর্কটিক'],a:1},
+ {q:'কুরআনের প্রথম নাজিলকৃত আয়াত কোন সূরার?',o:['ফাতিহা','বাকারা','আলাক','ইখলাস'],a:2},
+ {q:'বাংলাদেশের রাজধানী কোনটি?',o:['চট্টগ্রাম','ঢাকা','খুলনা','সিলেট'],a:1},
+ {q:'সূর্য কী?',o:['গ্রহ','তারা','উপগ্রহ','ধূমকেতু'],a:1},
+ {q:'পানির রাসায়নিক সংকেত কোনটি?',o:['CO₂','H₂O','O₂','NaCl'],a:1},
+ {q:'বিশ্বের সবচেয়ে বড় মহাদেশ কোনটি?',o:['আফ্রিকা','ইউরোপ','এশিয়া','উত্তর আমেরিকা'],a:2},
+ {q:'রমজান হিজরি সনের কততম মাস?',o:['৭ম','৮ম','৯ম','১০ম'],a:2},
+ {q:'বাংলাদেশের জাতীয় কবি কে?',o:['রবীন্দ্রনাথ ঠাকুর','কাজী নজরুল ইসলাম','জসীমউদ্দীন','জীবনানন্দ দাশ'],a:1},
+ {q:'সূরা ফাতিহার আয়াত সংখ্যা কত?',o:['৫','৭','৯','১১'],a:1},
+ {q:'বাংলাদেশের জাতীয় পশু কোনটি?',o:['হরিণ','রয়েল বেঙ্গল টাইগার','হাতি','ভালুক'],a:1}];
+
+/* ম্যাপ অঞ্চল: [নাম, bbox = পশ্চিম,দক্ষিণ,পূর্ব,উত্তর] */
+const REG=[['বাংলাদেশ','88.0,20.5,92.7,26.7'],['ঢাকা','89.6,23.2,91.0,24.6'],['চট্টগ্রাম','90.9,21.2,92.4,23.4'],['রাজশাহী','88.0,24.0,89.6,25.5'],['খুলনা','88.8,21.7,90.0,23.4'],['বরিশাল','89.9,21.8,91.0,23.1'],['সিলেট','91.2,24.0,92.4,25.2'],['রংপুর','88.4,25.0,89.8,26.7'],['ময়মনসিংহ','89.8,24.2,91.0,25.4'],['বিশ্ব','-170,-55,180,75']];
+const mapSrc=b=>`https://www.openstreetmap.org/export/embed.html?bbox=${b}&layer=mapnik`;
+
+/* =====================================================================
+   ৩. রেন্ডার লজিক
+   ===================================================================== */
+const $=s=>document.querySelector(s),app=$('#app'),byId=id=>C.find(c=>c.id===id);
+const tile=(ic,bn,en,attr)=>`<button class="svc" ${attr}><span class="tile">${svg(ic)}</span><b>${bn}</b><small>${en}</small></button>`;
+const catTile=c=>tile(c.ic,c.bn,c.en,`data-go="${c.id}"`);
+const topTile=(c,i)=>{const t=c.t[i];return tile(t[2],t[0],t[1],`data-t="${c.id},${i}"`)};
+const sh=(a,b,link)=>`<div class="sh"><h2>${a}</h2>${link?`<a data-go="${link}">সব দেখুন</a>`:`<span>${b}</span>`}</div>`;
+const quoteBox=x=>`<div class="quote"><p class="qt">${x[0]}<cite>— ${x[1]}</cite></p></div>`;
+
+function groupsHTML(){
+  return GROUPS.map(g=>sh(g[0],g[1],g[3]?g[2][0]:'')+`<div class="sg">`+
+   g[2].map(id=>{const c=byId(id);return g[3]?c.t.map((_,i)=>topTile(c,i)).join(''):catTile(c)}).join('')+`</div>`).join('');
+}
+
+function home(){
+  const day=new Date().getDate(),dq=C[day%C.length].q;
+  app.innerHTML=`<header class="top"><span class="logo">${svg('quran').replace('<svg','<svg width="28" height="28"')}</span>
+   <h1>IqraZone<small>জ্ঞানের আলোয় আলোকিত জীবন</small></h1>
+   <button class="ibtn" data-themes aria-label="থিম বদলান">${svg('palette')}</button></header>
+   <div class="hello"><p>আসসালামু আলাইকুম</p><h2 id="dt"></h2><div class="dt" id="hj"></div></div>
+   <div class="card"><div class="row"><span>আজকের অনুপ্রেরণা</span><div class="clk" id="clk"></div></div>
+   <p class="qt">${dq[0]}<cite>— ${dq[1]}</cite></p></div>
+   <input id="q" type="search" placeholder="খুঁজুন: কুরআন, বিসিএস, ব্যাকরণ…" aria-label="সার্চ">
+   <div id="res">${groupsHTML()}</div>`;
+  $('#q').oninput=e=>{
+    const f=e.target.value.trim().toLowerCase();if(!f){$('#res').innerHTML=groupsHTML();return}
+    let h='';C.forEach(c=>{
+      if((c.bn+c.en).toLowerCase().includes(f))h+=catTile(c);
+      c.t.forEach((t,i)=>{if((t[0]+t[1]).toLowerCase().includes(f))h+=topTile(c,i)})});
+    $('#res').innerHTML=h?`<div class="sg" style="margin-top:20px">${h}</div>`:'<p class="empty">কিছু পাওয়া যায়নি। অন্য শব্দ দিয়ে খুঁজুন।</p>'};
+  tick();
+}
+
+function page(c){
+  let x='';
+  if(c.s==='map')x=sh('ইন্টারেক্টিভ ম্যাপ','Map')+`<div class="chips">${REG.map((r,i)=>`<button class="chip ${i?'':'on'}" data-b="${r[1]}">${r[0]}</button>`).join('')}</div><iframe id="mf" title="ম্যাপ" loading="lazy" src="${mapSrc(REG[0][1])}"></iframe>`;
+  if(c.s==='quiz')x=sh('দ্রুত কুইজ','Quick Quiz')+QUIZ.map((z,i)=>`<div class="q"><b>${z.q}</b><div>${z.o.map((o,j)=>`<button class="chip" data-q="${i}" data-j="${j}">${o}</button>`).join('')}</div></div>`).join('');
+  const more=c.m&&c.m.length?`<div class="moreq"><button class="chip" id="mb">আরও কোটেশন দেখুন (${c.m.length})</button><div id="mq" hidden>${c.m.map(quoteBox).join('')}</div></div>`:'';
+  app.innerHTML=`<button class="back" data-go="">← হোম</button>
+   <div class="ph"><span class="tile">${svg(c.ic)}</span><div><h2>${c.bn}</h2><small>${c.en}</small></div></div>
+   ${quoteBox(c.q)}${more}
+   ${sh('সব টপিক','Topics')}<div class="sg">${c.t.map((_,i)=>topTile(c,i)).join('')}</div>${x}`;
+  const mb=$('#mb');if(mb)mb.onclick=()=>{const q=$('#mq');q.hidden=!q.hidden;mb.textContent=q.hidden?`আরও কোটেশন দেখুন (${c.m.length})`:'কম দেখুন'};
+  app.querySelectorAll('[data-b]').forEach(b=>b.onclick=()=>{app.querySelectorAll('[data-b]').forEach(y=>y.classList.remove('on'));b.classList.add('on');$('#mf').src=mapSrc(b.dataset.b)});
+  app.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{
+    const z=QUIZ[b.dataset.q],p=b.parentElement;p.querySelectorAll('.chip').forEach(y=>y.classList.remove('ok','no'));
+    const ok=+b.dataset.j===z.a;b.classList.add(ok?'ok':'no');if(!ok)p.children[z.a].classList.add('ok')});
+}
+
+// টপিকের পপআপ: links থাকলে দেখাবে, না থাকলে "শীঘ্রই আসছে"
+function openTopic(id,i){
+  const c=byId(id),t=c.t[i],m=$('#m');
+  m.innerHTML=`<span class="tile">${svg(t[2])}</span><h3>${t[0]}</h3><p>${t[1]} · ${c.bn}</p>
+  ${t[3]?`<ul>${t[3].map(l=>`<li><a href="${l.u}" target="_blank" rel="noopener">${l.t}</a></li>`).join('')}</ul>`:'<p>এই টপিকের নোট শীঘ্রই যোগ হবে।</p>'}
+  <p class="qt" style="font-size:.95rem">${c.q[0]}</p><button class="chip on cl" onclick="$('#m').close()">বন্ধ করুন</button>`;
+  m.showModal();
+}
+
+// থিম বাছাইয়ের পপআপ
+function openThemes(){
+  const cur=document.documentElement.dataset.theme,m=$('#m');
+  m.innerHTML=`<h3>থিম বেছে নিন</h3><p>আপনার পছন্দের রং নির্বাচন করুন</p>
+  <div class="thl">${TH.map(t=>`<button class="th ${t[0]===cur?'on':''}" data-th="${t[0]}"><span class="sw" style="background:${t[2]};border-color:${t[3]};box-shadow:inset 0 0 0 6px ${t[2]},inset 0 0 0 20px ${t[3]}"></span>${t[1]}</button>`).join('')}</div>
+  <button class="chip on cl" onclick="$('#m').close()">বন্ধ করুন</button>`;
+  m.showModal();
+}
+
+// নিচের নেভিগেশন
+const NAV=[['home','হোম',''],['mosque','ইসলাম','islam'],['globe','GK','gk'],['map','ম্যাপ','map'],['bag','চাকরি','job']];
+function nav(){$('#nav').innerHTML=NAV.map(n=>`<button data-go="${n[2]}" class="${location.hash==='#'+n[2]||(!n[2]&&!location.hash)?'on':''}">${svg(n[0])}${n[1]}</button>`).join('')}
+
+// তারিখ ও ঘড়ি (বাংলা সংখ্যায়)
+function tick(){
+  const d=new Date(),c=$('#clk');if(!c)return;
+  c.textContent=d.toLocaleTimeString('bn-BD',{hour:'numeric',minute:'2-digit',second:'2-digit'});
+  $('#dt').textContent=d.toLocaleDateString('bn-BD',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  try{$('#hj').textContent=new Intl.DateTimeFormat('bn-u-ca-islamic-umalqura',{day:'numeric',month:'long',year:'numeric'}).format(d)+' হিজরি'}catch(e){}
+}
+setInterval(tick,1000);
+
+// ক্লিক হ্যান্ডলার ও রাউটার
+document.addEventListener('click',e=>{
+  const th=e.target.closest('[data-th]');
+  if(th){applyTheme(th.dataset.th);openThemes();return}
+  if(e.target.closest('[data-themes]')){openThemes();return}
+  const g=e.target.closest('[data-go]'),t=e.target.closest('[data-t]');
+  if(g)location.hash=g.dataset.go;
+  if(t){const[a,b]=t.dataset.t.split(',');openTopic(a,+b)}
+});
+function route(){const c=C.find(x=>'#'+x.id===location.hash);c?page(c):home();nav();scrollTo(0,0)}
+addEventListener('hashchange',route);route();
+</script>
+</body>
+</html>
