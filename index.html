@@ -191,6 +191,268 @@ dialog ul{margin:10px 0 10px 20px}dialog a{color:var(--gold2)}
 .tsb{width:min(62vw,240px);aspect-ratio:1;border-radius:50%;border:3px solid var(--gold);background:linear-gradient(180deg,var(--ga),var(--gb));box-shadow:0 0 28px var(--glow);display:grid;place-content:center;gap:4px;color:var(--ink);user-select:none;-webkit-tap-highlight-color:transparent}
 .tsb:active{transform:scale(.97);background:var(--tint)}.tsb b{font-size:3.4rem;line-height:1}.tsb small{color:var(--mut)}
 .dtw tr.r td{white-space:normal}
+
+/* ===== আপডেট: বড় কোটেশন, বড় আইকন (৩ কলাম), আরো দেখুন, পেছনে বাটন ===== */
+.card{padding:16px 18px}
+.card .row{font-size:1rem}
+.card .qt,.quote .qt{font-size:1.4rem;line-height:1.65}
+.card .qt cite,.quote .qt cite{font-size:1.05rem;margin-top:8px}
+.quote{padding:14px 16px 13px 50px}
+.quote::before{font-size:3.4rem}
+.gt{font-size:1.4rem}
+.ch h3{font-size:1.15rem}
+.tl{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px 12px}
+.tt{gap:7px}
+.tt .bx{aspect-ratio:1.12;border-radius:18px}
+.tt .bx svg{width:46%;height:52%}
+.tt b{font-size:1rem}
+.tt small{font-size:.78rem}
+.tl.fold:not(.open) .tt.x{display:none}
+.morebtn{display:flex;align-items:center;justify-content:center;gap:6px;margin:14px auto 2px;padding:9px 24px;border-radius:999px;border:1.5px solid var(--gold);background:var(--surf2);color:var(--gold2);font-size:1rem;font-weight:600;box-shadow:0 0 12px var(--glow);transition:background .2s,transform .15s}
+.morebtn:hover{background:var(--tint)}.morebtn:active{transform:scale(.96)}
+.morebtn svg{width:17px;height:17px;stroke:currentColor;stroke-width:2.2;transition:transform .2s}
+.morebtn.on svg{transform:rotate(180deg)}
+.back{display:none;align-items:center;justify-content:center;gap:6px;flex:none;height:42px;min-width:42px;padding:0 14px;border-radius:14px;border:1px solid var(--line2);background:linear-gradient(180deg,var(--ga),var(--gb));color:var(--gold2);box-shadow:0 2px 10px var(--glow);transition:transform .15s,background .2s}
+.back svg{width:22px;height:22px;stroke:currentColor;stroke-width:2.3}
+.back .bl{font-size:.98rem;font-weight:600}
+.back:hover{background:var(--tint)}.back:active{transform:scale(.9)}
+body.inner .back{display:inline-flex}
+@media(max-width:900px){
+ .tl{grid-template-columns:repeat(3,1fr);gap:14px 10px}
+ .tt b{font-size:.92rem}.tt small{font-size:.72rem}
+ .card .qt,.quote .qt{font-size:1.32rem}
+ .back{width:42px;padding:0}.back .bl{display:none}
+}
+
+/* ===== আপডেট ২: ছোট আয়তাকার আইকন, বড় শিরোনাম ===== */
+.hello h2{font-size:1.7rem}
+.hello p{font-size:1.05rem}
+.gt{font-size:1.75rem;margin-top:26px}
+.gt span{font-size:.95rem}
+.ch h3{font-size:1.4rem}
+.ch h3 svg{width:22px;height:22px}
+.ch a{font-size:.95rem}
+.sh h2{font-size:1.4rem}
+.ph h2{font-size:1.8rem}
+.tl{grid-template-columns:repeat(auto-fill,minmax(125px,1fr));gap:12px 8px}
+.tt .bx{aspect-ratio:1.7;border-radius:12px}
+.tt .bx svg{width:34%;height:54%}
+.tt b{font-size:.92rem}
+.tt small{font-size:.72rem}
+@media(max-width:900px){
+ .tl{grid-template-columns:repeat(3,1fr);gap:12px 8px}
+ .tt b{font-size:.86rem}.tt small{font-size:.68rem}
+ .gt{font-size:1.65rem}
+}
+
+/* ===== আপডেট ৩: আরো ছোট আইকন, বড় লেখা ===== */
+.tt .bx{aspect-ratio:2.3;border-radius:11px}
+.tt .bx svg{width:28%;height:56%}
+.tt{gap:5px}
+.tt b{font-size:1.08rem;line-height:1.3;font-weight:600}
+.tt small{font-size:.84rem;line-height:1.25}
+@media(max-width:900px){
+ .tt b{font-size:1.02rem}.tt small{font-size:.8rem}
+}
+
+/* ===== আপডেট ৪: আইকন কাছাকাছি, শিরোনামের মাঝে বড় গ্যাপ ===== */
+.tl{gap:6px 6px}
+.tt{gap:3px}
+.tt .bx{margin-bottom:0}
+.tt b{line-height:1.2}
+.tt small{line-height:1.15}
+.ch{margin:38px 0 8px}
+.gt + .ch{margin-top:14px}
+.gt{margin-top:46px}
+.hello + .card + .gt{margin-top:30px}
+.morebtn{margin:8px auto 0;padding:7px 22px}
+@media(max-width:900px){.tl{gap:6px 6px}}
+
+/* ===== আপডেট ৫: প্রতিটি বিভাগের আলাদা থিম/কালার ===== */
+.th0{--gold:#1f8a5b;--gold2:#16704a;--glow:#1f8a5b26;--tint:#1f8a5b14;--ring:#1f8a5b55;--ga:#ffffff;--gb:#f1f9f5;--line2:#1f8a5b40}
+.th1{--gold:#2f5bd8;--gold2:#2449b8;--glow:#2f5bd826;--tint:#2f5bd814;--ring:#2f5bd855;--ga:#ffffff;--gb:#f2f6fe;--line2:#2f5bd840}
+.th2{--gold:#7c4dd8;--gold2:#6237b8;--glow:#7c4dd826;--tint:#7c4dd814;--ring:#7c4dd855;--ga:#ffffff;--gb:#f6f2fd;--line2:#7c4dd840}
+.th3{--gold:#e07a1f;--gold2:#b85f10;--glow:#e07a1f26;--tint:#e07a1f14;--ring:#e07a1f55;--ga:#ffffff;--gb:#fef6ee;--line2:#e07a1f40}
+.th4{--gold:#0e9aa7;--gold2:#0b7a85;--glow:#0e9aa726;--tint:#0e9aa714;--ring:#0e9aa755;--ga:#ffffff;--gb:#eefafb;--line2:#0e9aa740}
+.th5{--gold:#d6457a;--gold2:#b32e60;--glow:#d6457a26;--tint:#d6457a14;--ring:#d6457a55;--ga:#ffffff;--gb:#fdf0f5;--line2:#d6457a40}
+.th6{--gold:#c9961a;--gold2:#9c7110;--glow:#c9961a26;--tint:#c9961a14;--ring:#c9961a55;--ga:#ffffff;--gb:#fdf8e9;--line2:#c9961a40}
+.th7{--gold:#c4503a;--gold2:#a13a26;--glow:#c4503a26;--tint:#c4503a14;--ring:#c4503a55;--ga:#ffffff;--gb:#fdf1ee;--line2:#c4503a40}
+.sec{margin-top:18px;padding:12px 12px 14px;border-radius:20px;border:1.5px solid var(--ring);background:linear-gradient(180deg,var(--tint),transparent 85%),var(--card);box-shadow:0 4px 18px var(--glow);border-top:4px solid var(--gold)}
+.sec .ch{margin:2px 2px 10px}
+.sec .ch h3{color:var(--gold2)}
+.sec .ch h3 svg{stroke:var(--gold2)}
+.sec .tt .bx{border-color:var(--gold)}
+.gt + .sec{margin-top:14px}
+.sec .morebtn{background:var(--ga)}
+
+/* ===== আপডেট ৬: গাঢ় (ডিপ) থিম – পুরো ব্যাকগ্রাউন্ড আলাদা ===== */
+.th0{--deep:#0f6b47;--deep2:#083d29}
+.th1{--deep:#1f3fa8;--deep2:#11246b}
+.th2{--deep:#5b2fb0;--deep2:#361a70}
+.th3{--deep:#c25a0a;--deep2:#7d3705}
+.th4{--deep:#0b6d7a;--deep2:#064049}
+.th5{--deep:#b02a63;--deep2:#6e1639}
+.th6{--deep:#a07408;--deep2:#5e4403}
+.th7{--deep:#a63522;--deep2:#611f13}
+.sec{background:linear-gradient(155deg,var(--deep),var(--deep2));border:0;color:#fff;box-shadow:0 8px 22px color-mix(in srgb,var(--deep2) 45%,transparent)}
+.sec .ch h3{color:#fff}
+.sec .ch h3 svg{stroke:#fff}
+.sec .ch a{color:#ffffffe6;background:#ffffff1f;padding:3px 11px;border-radius:999px}
+.sec .tt .bx{background:#ffffff1f;border:1.5px solid #ffffff73;box-shadow:none}
+.sec .tt .bx svg{stroke:#fff}
+.sec .tt:hover .bx,.sec .tt:active .bx{background:#ffffff38;box-shadow:none}
+.sec .tt b{color:#fff}
+.sec .tt small{color:#ffffffbf}
+.sec .morebtn{background:#fff;color:var(--deep);border-color:#fff;box-shadow:0 2px 10px #0003}
+.sec .ch a{white-space:nowrap;flex:none;margin-left:8px}
+.sec .ch h3{min-width:0}
+
+/* ===== আপডেট ৭: প্রতিটি আইকনের চারপাশে সুন্দর বর্ডার ===== */
+.sec .tl{gap:9px 8px}
+.sec .tt{padding:7px 5px 8px;border-radius:16px;border:1.5px solid #ffffff8c;background:linear-gradient(180deg,#ffffff1a,#ffffff08);box-shadow:inset 0 0 0 3px #ffffff0d,0 3px 10px #0003;gap:5px;transition:transform .15s,background .2s,border-color .2s}
+.sec .tt:hover,.sec .tt:active{border-color:#fff;background:#ffffff26;transform:translateY(-2px)}
+.sec .tt .bx{border:0;background:#ffffff26;border-radius:11px;margin:0 3px}
+.sec .tt b{padding:0 2px}
+
+/* ===== আপডেট ৮: ভেতরের বিভাগ-পাতায়ও একই গাঢ় থিম, আরো আয়তাকার আইকন ===== */
+.pgsec{margin-top:10px;padding:14px 12px 16px}
+.sec .ph{margin:2px 2px 12px}
+.sec .ph h2{color:#fff}
+.sec .ph small{color:#ffffffbf}
+.sec .ic.big{background:#ffffff26;border-color:#ffffff8c;box-shadow:none}
+.sec .ic.big svg{stroke:#fff}
+.sec .quote{background:#ffffff1f;border:1.5px solid #ffffff73;box-shadow:none;color:#fff}
+.sec .quote::before{color:#fff}
+.sec .qt,.sec .qt cite{color:#fff}
+.sec .qt cite{color:#ffffffd0}
+.sec .sh h2{color:#fff}.sec .sh span{color:#ffffffb3}
+.sec .chip{background:#ffffff1f;border-color:#ffffff73;color:#fff}
+.sec .tt .bx{aspect-ratio:3.1;border-radius:9px;margin:0 2px}
+.sec .tt .bx svg{width:22%;height:60%}
+.sec .tt{padding:6px 4px 7px;border-radius:12px;gap:4px}
+.sec .tt b{font-size:.9rem}
+.sec .tt small{font-size:.7rem}
+.sec .tl{gap:8px 7px}
+.sec .tt .bx svg{width:26%;height:72%}
+
+/* ===== আপডেট ৯: হোমপেজ পরিচিতি (হিরো) ===== */
+.hero{position:relative;overflow:hidden;margin:6px 0 16px;padding:18px 18px 18px;border-radius:24px;color:#fff;background:radial-gradient(circle at 92% 8%,#ffffff2e,transparent 42%),radial-gradient(circle at 5% 105%,#ffffff1f,transparent 45%),linear-gradient(150deg,#2f5bd8,#162d78 85%);box-shadow:0 10px 28px #2449b84d}
+.hero::after{content:"";position:absolute;right:-30px;top:-30px;width:130px;height:130px;border-radius:50%;border:2px solid #ffffff2b;box-shadow:0 0 0 18px #ffffff10}
+.hero-top{position:relative;z-index:1;display:flex;align-items:center;gap:12px}
+.hero-logo{width:52px;height:52px;flex:none;border-radius:16px;display:grid;place-items:center;background:#ffffff26;border:1.5px solid #ffffff80}
+.hero-logo svg{width:28px;height:28px;stroke:#fff}
+.hero-top b{display:block;font-size:1.9rem;line-height:1.1;letter-spacing:.01em}
+.hero-top small{display:block;margin-top:2px;font-size:1rem;color:#ffffffd9}
+.hero-p{position:relative;z-index:1;margin:14px 0 4px;font-size:1.08rem;line-height:1.75;color:#ffffffeb}
+.hero-cta{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.hb{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:999px;border:1.5px solid #ffffff99;background:#ffffff1f;color:#fff;font-size:1.02rem;font-weight:600;transition:transform .15s,background .2s}
+.hb svg{width:17px;height:17px;stroke:currentColor;stroke-width:2.3}
+.hb.pri{background:#fff;color:#1d3f9e;border-color:#fff}
+.hb:active{transform:scale(.95)}
+.pil{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.pl{display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;padding:12px 12px 13px;border-radius:18px;border:1.5px solid var(--ring);border-top:4px solid var(--gold);background:linear-gradient(180deg,var(--tint),transparent 90%),var(--card);box-shadow:0 3px 14px var(--glow);color:var(--ink);transition:transform .15s}
+.pl:active{transform:scale(.97)}
+.pl .pi{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--gold);box-shadow:0 3px 8px var(--glow)}
+.pl .pi svg{width:22px;height:22px;stroke:#fff}
+.pl b{font-size:1.12rem;color:var(--gold2);line-height:1.25}
+.pl small{font-size:.86rem;line-height:1.5;color:var(--mut)}
+.abt{margin:12px 0 18px;border-radius:18px;border:1.5px solid var(--line2);background:var(--card)}
+.abt summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:12px 16px;font-size:1.08rem;font-weight:600;color:var(--gold2)}
+.abt summary::-webkit-details-marker{display:none}
+.abt summary svg{width:20px;height:20px;stroke:currentColor;stroke-width:2.2;transition:transform .2s}
+.abt[open] summary svg{transform:rotate(180deg)}
+.abt-b{padding:0 16px 16px;border-top:1px dashed var(--line2)}
+.abt-b h3{margin:14px 0 6px;font-size:1.1rem;color:var(--ink);padding-left:9px;border-left:3px solid var(--gold)}
+.abt-b p{line-height:1.8;color:var(--mut);font-size:1rem}
+.wy{display:flex;flex-wrap:wrap;gap:7px}
+.wy span{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:999px;background:var(--tint);border:1px solid var(--ring);color:var(--gold2);font-size:.94rem}
+.wy svg{width:15px;height:15px;stroke:var(--gold2)}
+.stp{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.stp div{text-align:center;padding:10px 6px;border-radius:14px;background:var(--surf);border:1px solid var(--line2)}
+.stp .sn{display:grid;place-items:center;width:30px;height:30px;margin:0 auto 5px;border-radius:50%;background:var(--gold);color:#fff;font-weight:700}
+.stp b{display:block;font-size:1rem}
+.stp small{display:block;margin-top:2px;font-size:.8rem;line-height:1.4;color:var(--mut)}
+.hero + .sh{margin-top:6px}
+@media(min-width:901px){.pil{grid-template-columns:repeat(4,1fr)}}
+
+/* ===== আপডেট ১০: প্রতিটি আইকন একটি লম্বালম্বি কার্ড – এক সারিতে একটি ===== */
+.sec .tl{grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:9px}
+@media(max-width:900px){.sec .tl{grid-template-columns:1fr;gap:9px}}
+.sec .tt{flex-direction:row;align-items:center;text-align:left;gap:13px;padding:10px 14px 10px 10px;border-radius:16px}
+.sec .tt .bx{flex:none;width:50px;height:50px;aspect-ratio:1;margin:0;border-radius:14px;background:#ffffff26}
+.sec .tt .bx svg{width:26px;height:26px}
+.sec .tt>span:last-child{flex:1;min-width:0;text-align:left}
+.sec .tt b{font-size:1.1rem;line-height:1.3;padding:0}
+.sec .tt small{font-size:.82rem;line-height:1.3;margin-top:1px}
+.sec .tt::after{content:"›";flex:none;margin-left:auto;font-size:2rem;line-height:1;color:#ffffffb3;font-family:system-ui,sans-serif}
+.sec .tt:active::after,.sec .tt:hover::after{color:#fff}
+
+/* ===== আপডেট ১১: ছোট (কম উচ্চতার) পরিচিতি কার্ড ===== */
+.hero{padding:13px 15px 14px;margin:4px 0 12px;border-radius:20px}
+.hero::after{width:100px;height:100px;right:-26px;top:-26px}
+.hero-logo{width:42px;height:42px;border-radius:13px}
+.hero-logo svg{width:23px;height:23px}
+.hero-top{gap:10px}
+.hero-top b{font-size:1.6rem}
+.hero-top small{font-size:.92rem;margin-top:0}
+.hero-p{margin:9px 0 0;font-size:1rem;line-height:1.65}
+.pil{gap:8px}
+.pl{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:5px 9px;padding:9px 10px 10px;border-radius:15px;border-top-width:3px}
+.pl .pi{width:32px;height:32px;border-radius:10px}
+.pl .pi svg{width:18px;height:18px}
+.pl b{font-size:1.02rem;line-height:1.2}
+.pl small{grid-column:1/-1;font-size:.8rem;line-height:1.4}
+
+/* ===== আপডেট ১২: কমপ্যাক্ট কার্ড – মোবাইলে স্মার্ট লুক ===== */
+.sec{margin-top:14px;padding:10px 10px 11px;border-radius:18px}
+.sec .ch{margin:0 2px 8px}
+.sec .ch h3{font-size:1.08rem;gap:7px;line-height:1.25}
+.sec .ch h3 svg{width:18px;height:18px}
+.sec .ch a{font-size:.82rem;padding:2px 10px}
+.sec .tl{gap:6px}
+.sec .tt{gap:10px;padding:6px 10px 6px 7px;border-radius:13px}
+.sec .tt .bx{width:38px;height:38px;border-radius:11px}
+.sec .tt .bx svg{width:20px;height:20px}
+.sec .tt b{font-size:.96rem;line-height:1.25}
+.sec .tt small{font-size:.74rem;line-height:1.2;margin-top:0}
+.sec .tt::after{font-size:1.5rem}
+.sec .morebtn{margin:8px auto 0;padding:5px 18px;font-size:.88rem}
+.sec .morebtn svg{width:15px;height:15px}
+.gt{font-size:1.45rem;margin-top:30px}
+.gt + .sec{margin-top:10px}
+.pgsec{padding:12px 10px 12px}
+.sec .ph h2{font-size:1.45rem}
+.sec .ic.big{width:46px;height:46px}
+
+/* ===== আপডেট ১৩: বিভাগের শিরোনাম একটু বড় ===== */
+.sec .ch{margin:0 2px 10px;align-items:center}
+.sec .ch h3{font-size:1.38rem;line-height:1.25;gap:8px;font-weight:600}
+.sec .ch h3 svg{width:24px;height:24px;flex:none}
+.sec .ch a{font-size:.86rem}
+
+/* ===== আপডেট ১৪: ভেতরের সব পাতাতেও একই গাঢ় থিম ===== */
+.deep{--ink:#ffffff;--mut:#ffffffc2;--card:#ffffff1a;--surf:#ffffff1a;--surf2:#ffffff24;--line:#ffffff2e;--line2:#ffffff59;--gold:#ffffff;--gold2:#ffffff;--tint:#ffffff24;--ring:#ffffff66;--glow:#00000033;--ga:#ffffff26;--gb:#ffffff0d;--ongold:var(--deep)}
+.deep a{color:#fff}
+.deep .crumb,.deep .crumb a{color:#ffffffd9}
+.deep .crumb a{text-decoration:underline;text-underline-offset:3px}
+.deep .dtw th{background:var(--deep2)}
+.deep .dsearch,.deep input{color:#fff}
+.deep .dsearch::placeholder,.deep input::placeholder{color:#ffffff99}
+.deep .stat,.deep .di,.deep .ay,.deep .q,.deep .fx div,.deep .dtw{border-color:#ffffff59;background:#ffffff1a;box-shadow:none}
+.deep .stat .ic,.deep .ic{background:#ffffff26;border-color:#ffffff8c;box-shadow:none}
+.deep iframe{border-color:#ffffff8c;box-shadow:none}
+.deep .chip{background:#ffffff1f;border-color:#ffffff73;color:#fff}
+.deep .chip.on{background:#fff;color:var(--deep);border-color:#fff}
+.deep .chip.ok{background:#fff;color:#0b6b3a;border-color:#fff}
+.deep .chip.no{background:#a93a32;color:#fff;border-color:#ffffff80}
+.deep .tsb{border-color:#ffffff99}
+
+.deep .tc{width:100%;border-radius:14px;border:1.5px solid #ffffff8c;background:linear-gradient(180deg,#ffffff1a,#ffffff08);box-shadow:inset 0 0 0 3px #ffffff0d,0 3px 10px #0003;padding:7px 12px 7px 8px;gap:11px}
+.deep .tc:hover,.deep .tc:active{border-color:#fff;background:#ffffff26}
+.deep .tc .ic{width:38px;height:38px;border-radius:11px}
+.deep .tc b{font-size:1rem;color:#fff}
+.deep .tc small{color:#ffffffc2}
+.deep .tc::after{content:"›";margin-left:auto;font-size:1.6rem;line-height:1;color:#ffffffb3;font-family:system-ui,sans-serif}
 </style>
 </head>
 <body>
@@ -205,7 +467,8 @@ dialog ul{margin:10px 0 10px 20px}dialog a{color:var(--gold2)}
  <div class="ov" data-menu-close></div>
  <main>
   <div class="topbar">
-   <button class="ham" data-menu aria-label="মেনু খুলুন" id="ham"></button>
+   <button class="back" id="back" aria-label="পেছনে যান"><span id="ico-back"></span><span class="bl">পেছনে</span></button>
+    <button class="ham" data-menu aria-label="মেনু খুলুন" id="ham"></button>
    <div class="sbox"><span id="ico-s"></span><input id="q" type="search" placeholder="খুঁজুন: কুরআন, বিসিএস, ব্যাকরণ…" aria-label="সার্চ"></div>
   </div>
   <div id="view"></div>
@@ -219,7 +482,7 @@ dialog ul{margin:10px 0 10px 20px}dialog a{color:var(--gold2)}
    ===================================================================== */
 const I={
 home:"M3 11l9-8 9 8 M5 10v10h14V10 M10 20v-6h4v6",search:"M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14z M21 21l-5-5",
-menu:"M4 6h16 M4 12h16 M4 18h16",chevR:"M9 6l6 6-6 6",chevL:"M15 6l-6 6 6 6",layers:"M12 3l9 5-9 5-9-5z M3 13l9 5 9-5",
+menu:"M4 6h16 M4 12h16 M4 18h16",back:"M19 12H5 M11 6l-6 6 6 6",chevD:"M6 9l6 6 6-6",chevR:"M9 6l6 6-6 6",chevL:"M15 6l-6 6 6 6",layers:"M12 3l9 5-9 5-9-5z M3 13l9 5 9-5",
 mosque:"M3 21V11h3v10 M18 21V11h3v10 M6 21v-6a6 6 0 0 1 12 0v6 M12 4v3 M3 21h18",
 quran:"M6 3h12v18H6z M6 17h12 M12 7l.9 1.8 2 .3-1.4 1.4.3 2-1.8-1-1.8 1 .3-2-1.4-1.4 2-.3z",
 scroll:"M8 3h10v14a3 3 0 0 1-3 3H5a3 3 0 0 0 3-3z M5 20a3 3 0 0 1-3-3V6h3 M11 8h4 M11 12h4",
@@ -498,7 +761,7 @@ const open=new Set();   // সাইডবারে কোন বিভাগ �
 
 /* স্থির আইকনগুলো */
 $('#logo').innerHTML=svg('quran');$('#ico-s').innerHTML=svg('search');
-$('#ham').innerHTML=svg('menu');$('#ico-coll').innerHTML=svg('chevL');
+$('#ham').innerHTML=svg('menu');$('#ico-back').innerHTML=svg('back');$('#ico-coll').innerHTML=svg('chevL');
 
 /* ---------- সাইডবার ---------- */
 function sidebar(){
@@ -525,13 +788,40 @@ const catCard=c=>`<button class="cc" data-go="${c.id}"><span class="h"><span cla
 const sh=(a,b)=>`<div class="sh"><h2>${a}</h2><span>${b||''}</span></div>`;
 
 /* ---------- হোম ---------- */
+const thOf=id=>Math.max(0,GROUPS.flatMap(g=>g[2]).indexOf(id))%8;
+/* ---------- হোম: ওয়েবসাইট পরিচিতি (হিরো) ---------- */
+const ABOUT_PILLARS=[
+ ['islam','mosque','ইসলামিক শিক্ষা','কুরআন, হাদিস, ফিকহ, দোয়া, আমল, তাসবিহ, যাকাত ক্যালকুলেটর ও হিজরি ক্যালেন্ডার।'],
+ ['general','grad','একাডেমিক','স্কুল-কলেজ থেকে বিশ্ববিদ্যালয়, বিজ্ঞান-গণিত, ভাষা-সাহিত্য, আইসিটি ও শিশু কর্নার।'],
+ ['bd','compass','জ্ঞান ও প্রস্তুতি','বাংলাদেশের বিভাগ-জেলা-উপজেলা, মানচিত্র, সাধারণ জ্ঞান, ইতিহাস ও চাকরির প্রস্তুতি।'],
+ ['self','sprout','জীবন ও অভ্যাস','আত্মউন্নয়ন, স্বাস্থ্য, অর্থ ও উদ্যোক্তা এবং কার্যকর স্টাডি টিপস।']];
+const ABOUT_STEPS=[['search','খুঁজুন','সার্চ বক্সে লিখুন বা বিভাগ বেছে নিন'],['book','পড়ুন','সহজ বাংলায় পড়ুন ও শিখুন'],['check','যাচাই করুন','কুইজে নিজেকে পরীক্ষা করুন']];
+const ABOUT_WHY=['সহজ বাংলায়','সব এক জায়গায়','মোবাইল-বান্ধব','দ্রুত সার্চ','কুইজে যাচাই'];
+const about=()=>`<section class="hero">
+  <div class="hero-top"><span class="hero-logo">${svg('quran')}</span><div><b>IqraZone</b><small>জ্ঞানের আলোয় আলোকিত জীবন</small></div></div>
+  <p class="hero-p">‘ইকরা’ অর্থ ‘পড়ো’ — কুরআনের প্রথম নির্দেশ। এই অনুপ্রেরণা থেকেই IqraZone: ইসলামি শিক্ষা, একাডেমিক পড়াশোনা, সাধারণ জ্ঞান, চাকরির প্রস্তুতি ও জীবনদক্ষতা — সবকিছু এক প্ল্যাটফর্মে, সহজ বাংলায়।</p>
+ </section>
+ <div class="sh"><h2>এখানে কী কী আছে</h2><span>What's inside</span></div>
+ <div class="pil">${ABOUT_PILLARS.map((p,i)=>`<button class="pl th${i}" data-go="${p[0]}"><span class="pi">${svg(p[1])}</span><b>${p[2]}</b><small>${p[3]}</small></button>`).join('')}</div>
+ <details class="abt"><summary><span>আমাদের সম্পর্কে বিস্তারিত</span>${svg('chevD')}</summary>
+  <div class="abt-b">
+   <h3>কেন তৈরি করা হয়েছে?</h3>
+   <p>বাংলা ভাষাভাষী শিক্ষার্থী ও জ্ঞানপিপাসু মানুষের জন্য ইসলামি ও আধুনিক জ্ঞান এক জায়গায়, সহজ ভাষায় এবং মোবাইলে পড়ার উপযোগী করে সাজিয়ে দিতে — যাতে দ্বীনি শিক্ষা ও জাগতিক শিক্ষা পাশাপাশি এগিয়ে চলে।</p>
+   <h3>কেন IqraZone?</h3>
+   <div class="wy">${ABOUT_WHY.map(w=>`<span>${svg('check')}${w}</span>`).join('')}</div>
+   <h3>কীভাবে ব্যবহার করবেন?</h3>
+   <div class="stp">${ABOUT_STEPS.map((x,i)=>`<div><span class="sn">${bn(i+1)}</span><b>${x[1]}</b><small>${x[2]}</small></div>`).join('')}</div>
+  </div></details>`;
+const FOLD=6; // হোমে প্রতি বিভাগে প্রথম কয়টি আইকন দেখাবে
+const topGrid=c=>{const n=c.t.length;
+  return `<div class="tl${n>FOLD?' fold':''}">${c.t.map((_,i)=>topCard(c,i).replace('class="tt"',i>=FOLD?'class="tt x"':'class="tt"')).join('')}</div>`
+   +(n>FOLD?`<button class="morebtn" data-more data-n="${n-FOLD}">আরো দেখুন (${bn(n-FOLD)}টি)${svg('chevD')}</button>`:'')};
 function home(){
-  const dq=C[new Date().getDate()%C.length].q,topics=C.reduce((n,c)=>n+c.t.length,0);
-  const stat=(ic,n,l)=>`<div class="stat"><span class="ic">${svg(ic)}</span><div><b>${bn(n)}</b><small>${l}</small></div></div>`;
+  const dq=C[new Date().getDate()%C.length].q;let k=0;
   view.innerHTML=`<div class="hello"><p>আসসালামু আলাইকুম</p><h2>আজ কী শিখতে চান?</h2></div>
-   <div class="stats">${stat('layers',C.length,'বিভাগ')}${stat('book',topics,'টপিক')}${stat('check',QUIZ.length,'কুইজ প্রশ্ন')}${stat('map',DIST.length,'জেলার তথ্য')}</div>
+   ${about()}
    <div class="card"><div class="row"><span>আজকের অনুপ্রেরণা</span></div><p class="qt">${dq[0]}<cite>— ${dq[1]}</cite></p></div>
-   ${GROUPS.map(g=>`<div class="gt">${g[0]}<span>${g[1]}</span></div>`+g[2].map(id=>{const c=byId(id);return `<div class="ch"><h3>${svg(c.ic)}${c.bn}</h3><a data-go="${id}">সব দেখুন →</a></div><div class="tl">${c.t.map((_,i)=>topCard(c,i)).join('')}</div>`}).join('')).join('')}`;
+   ${GROUPS.map(g=>`<div class="gt">${g[0]}<span>${g[1]}</span></div>`+g[2].map(id=>{const c=byId(id);return `<section class="sec th${k++%8}"><div class="ch"><h3>${svg(c.ic)}${c.bn}</h3><a data-go="${id}">সব দেখুন →</a></div>${topGrid(c)}</section>`}).join('')).join('')}`;
 }
 
 
@@ -592,6 +882,7 @@ function page(c){
 
 /* ---------- সার্চ রেজাল্ট ---------- */
 function results(f){
+  view.className='';
   let cats='',tops='';
   C.forEach(c=>{
     if((c.bn+c.en).toLowerCase().includes(f))cats+=catCard(c);
@@ -825,6 +1116,8 @@ document.addEventListener('click',e=>{
   if(T('[data-menu]')){document.body.classList.add('menu');return}
   if(T('[data-menu-close]')){closeMenu();return}
   if(T('[data-coll]')){const b=document.body;b.classList.toggle('collapsed');try{localStorage.setItem('iz-coll',b.classList.contains('collapsed')?1:'')}catch(x){}return}
+  const mo=T('[data-more]');if(mo){const g=mo.previousElementSibling,on=g.classList.toggle('open');mo.classList.toggle('on',on);
+    mo.innerHTML=(on?'কম দেখুন':`আরো দেখুন (${bn(mo.dataset.n)}টি)`)+svg('chevD');return}
   const x=T('[data-x]');if(x){const id=x.dataset.x;open.has(id)?open.delete(id):open.add(id);if(cur()===id&&!open.has(id)){/* সক্রিয় বিভাগ বন্ধ করলে মনে রাখা হয় না */}sidebar();return}
   const t=T('[data-t]');if(t){const[a,b]=t.dataset.t.split(',');closeMenu();openTopic(a,+b);return}
   const g=T('[data-go]');if(g){const q=$('#q');q.value='';const id=g.dataset.go;if(id)open.add(id);closeMenu();
@@ -832,9 +1125,21 @@ document.addEventListener('click',e=>{
 });
 $('#q').oninput=e=>{const f=e.target.value.trim().toLowerCase();f?results(f):route()};
 
+/* ---------- স্মার্ট পেছনে বাটন ---------- */
+const nav=[cur()];let goingBack=false;
+const parentOf=h=>h.startsWith('is-')?'islam':/^(div|dis)-/.test(h)?'bd':'';
+$('#back').onclick=()=>{
+  let to;
+  if(nav.length>1){nav.pop();to=nav[nav.length-1];goingBack=true}else to=parentOf(cur());
+  $('#q').value='';
+  if(cur()===to){goingBack=false;route()}else location.hash=to;
+};
 function route(){
   const h=cur(),c=C.find(x=>x.id===h);
+  if(goingBack)goingBack=false;else if(nav[nav.length-1]!==h)nav.push(h);
+  document.body.classList.toggle('inner',!!h);
   $('#q').value='';
+  view.className=h?`sec pgsec deep th${thOf(c?c.id:h.startsWith('is-')?'islam':/^(div|dis)-/.test(h)?'bd':h)}`:'';
   if(h.startsWith('is-')){isRoute(h);sidebar();scrollTo(0,0);return}
   if(h.startsWith('div-'))divPage(h.slice(4));else if(h.startsWith('dis-'))disPage(+h.slice(4));else c?page(c):home();
   sidebar();scrollTo(0,0);
