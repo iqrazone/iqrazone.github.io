@@ -151,6 +151,7 @@ iframe{width:100%;height:min(52vh,400px);border:2px solid var(--gold);border-rad
 .dtw table{width:100%;border-collapse:collapse;font-size:.88rem}
 .dtw th{position:sticky;top:0;background:var(--surf);text-align:left;padding:6px 10px;font-weight:600;white-space:nowrap}
 .dtw td{padding:5px 10px;border-top:1px solid var(--line);white-space:nowrap}
+.sg2{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
 .dtw tr.r{cursor:pointer}.dtw tr.r:hover td{background:var(--tint)}
 .dtw td.n{white-space:normal;color:var(--mut);min-width:200px}
 .dsearch{width:100%;max-width:340px;padding:6px 12px;border-radius:10px;border:1px solid var(--line2);background:var(--surf2);color:var(--ink);font:inherit}
@@ -173,6 +174,7 @@ dialog ul{margin:10px 0 10px 20px}dialog a{color:var(--gold2)}
  .ham{display:grid}
  main{padding:0 16px 40px}
  .stats{grid-template-columns:repeat(2,1fr)}
+ .sg2{grid-template-columns:repeat(2,1fr)}.sg2 .stat{padding:7px 9px;gap:8px}.sg2 .stat b{font-size:.95rem;line-height:1.25}.sg2 .stat small{font-size:.72rem}.sg2 .ic{width:30px;height:30px}
  .tl{grid-template-columns:repeat(4,1fr);gap:8px 6px}
  .tt b{font-size:.82rem}.tt small{font-size:.66rem}
  .coll-btn{display:none}
@@ -273,9 +275,11 @@ const C=[
 {id:'job',bn:'চাকরি ও ক্যারিয়ার প্রস্তুতি',en:'Job & Career Preparation',ic:'bag',q:['প্রস্তুতি যত গভীর, সুযোগ তত কাছে।','IqraZone'],
  m:[['পরিশ্রম সৌভাগ্যের জননী।','প্রচলিত প্রবাদ'],['প্রতিদিনের ছোট অগ্রগতিই বড় সাফল্যের ভিত্তি।','IqraZone'],['আর মানুষ তা-ই পায়, যা সে চেষ্টা করে।','সূরা নাজম, ৫৩:৩৯']],t:[
  ['বিসিএস','BCS','medal'],['ব্যাংক জব','Bank Job','coin'],['শিক্ষক নিবন্ধন','NTRCA','users'],['বিগত প্রশ্ন','Past Papers','doc'],['গণিত','Math','calc'],['ভাইভা','Viva','mic'],['সিভি ও ইন্টারভিউ','CV & Interview','pen']]},
+{id:'bd',bn:'বাংলাদেশ: বিভাগ, জেলা ও উপজেলা',en:'Bangladesh: Divisions, Districts & Upazilas',ic:'flag',s:'bd',q:['নিজের দেশকে জানো, তারপর পৃথিবীকে জানো।','IqraZone'],
+ t:[['ঢাকা বিভাগ','Dhaka Division','pin',0,'div-dhaka'],['চট্টগ্রাম বিভাগ','Chattogram Division','pin',0,'div-ctg'],['রাজশাহী বিভাগ','Rajshahi Division','pin',0,'div-rajshahi'],['খুলনা বিভাগ','Khulna Division','pin',0,'div-khulna'],['বরিশাল বিভাগ','Barishal Division','pin',0,'div-barishal'],['সিলেট বিভাগ','Sylhet Division','pin',0,'div-sylhet'],['রংপুর বিভাগ','Rangpur Division','pin',0,'div-rangpur'],['ময়মনসিংহ বিভাগ','Mymensingh Division','pin',0,'div-mymensingh']]},
 {id:'map',bn:'মানচিত্র, ভূগোল ও ভ্রমণ',en:'Maps, Geography & Exploration',ic:'map',s:'map',q:['ভ্রমণ মানুষকে বিনয়ী করে, দেখায় পৃথিবীতে সে কত ক্ষুদ্র।','গুস্তাভ ফ্লবেয়ার'],
  m:[['বলুন, তোমরা পৃথিবীতে ভ্রমণ করো এবং দেখো, তিনি কীভাবে সৃষ্টির সূচনা করেছেন।','সূরা আনকাবুত, ২৯:২০'],['নিজের দেশকে জানো, তারপর পৃথিবীকে জানো।','IqraZone']],t:[
- ['বাংলাদেশ মানচিত্র','BD Map','pin'],['ঐতিহাসিক স্থান','Heritage','mosque'],['নদ-নদী','Rivers','waves'],['বিশ্ব মানচিত্র','World','globe'],['অ্যাটলাস','Atlas','compass']]},
+ ['বাংলাদেশ মানচিত্র','BD Map','pin',0,'bdmap'],['ঐতিহাসিক স্থান','Heritage','mosque',0,'hist'],['নদ-নদী','Rivers','waves',0,'rivers'],['বিশ্ব মানচিত্র','World','globe',0,'world'],['বিভাগ ও জেলা','Divisions & Districts','compass',0,'atlas']]},
 {id:'history',bn:'ইতিহাস, ঐতিহ্য ও সভ্যতা',en:'History, Heritage & Civilization',ic:'hour',q:['তারা কি পৃথিবীতে ভ্রমণ করেনি? করলে দেখত, তাদের পূর্ববর্তীদের পরিণতি কেমন হয়েছিল।','সূরা ইউসুফ, ১২:১০৯'],
  m:[['অতীত থেকে শেখো, বর্তমানে কাজ করো, ভবিষ্যতের জন্য প্রস্তুত হও।','IqraZone'],['ইতিহাস শুধু অতীতের গল্প নয়, আগামীর পথনির্দেশ।','IqraZone']],t:[
  ['ইসলামের ইতিহাস','Islamic History','hour'],['বাংলার ইতিহাস','Bengal History','scroll'],['মুক্তিযুদ্ধ','Liberation War','flag'],['বিশ্বসভ্যতা','Civilizations','globe'],['মুসলিম বিজ্ঞানী','Muslim Scientists','flask'],['প্রত্নতত্ত্ব ও ঐতিহ্য','Heritage','mosque']]},
@@ -318,7 +322,7 @@ const C=[
 const GROUPS=[
  ['ইসলামিক শিক্ষা','Islamic Studies',['islam']],
  ['একাডেমিক','Academic',['general','stem','lang','ict','kids','books']],
- ['জ্ঞান ও প্রস্তুতি','Explore & Prepare',['gk','map','history','exam','job','career']],
+ ['জ্ঞান ও প্রস্তুতি','Explore & Prepare',['bd','gk','map','history','exam','job','career']],
  ['জীবন ও অভ্যাস','Life Skills',['self','life','eco','tips']]
 ];
 
@@ -438,8 +442,24 @@ const BD_FACTS=[
 const fp=n=>n>=1e7?bn((n/1e7).toFixed(2))+' কোটি':bn((n/1e5).toFixed(1))+' লাখ';
 const fa=n=>bn(n.toLocaleString('en-IN'))+' বর্গ কিমি';
 const dens=(p,a)=>bn(Math.round(p/a).toLocaleString('en-IN'))+' জন/বর্গ কিমি';
-const osm=(b,m)=>`https://www.openstreetmap.org/export/embed.html?bbox=${b}&layer=mapnik${m?`&marker=${m}`:''}`;
+const gm=(q,z)=>`https://maps.google.com/maps?q=${encodeURIComponent(q)}&z=${z}&hl=bn&output=embed`;
+const gl=(q)=>`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
 const BDALL="88.0,20.5,92.7,26.7";
+
+/* উপজেলা সংখ্যা (DIST-এর ক্রমে) – সূত্র: উইকিপিডিয়া; নতুন উপজেলা গঠনে বদলাতে পারে */
+const UPZ=[5,9,12,5,5,13,6,6,7,5,6,5,5, 15,17,9,10,7,9,9,10,9,5,6, 9,13,9,5,9,11,7,5, 8,9,6,7,6,9,4,4,3,3, 10,8,7,7,6,4, 13,12,9,7, 8,6,13,7,7,9,5,5, 13,7,10,5];
+DIST.forEach((d,i)=>d[8]=UPZ[i]);
+/* বিভাগের উল্লেখযোগ্য বিষয়: [আইকন, শিরোনাম, বিবরণ] */
+const NOTE={
+dhaka:[["pin","রাজধানী ঢাকা","দেশের প্রশাসনিক ও বাণিজ্যিক কেন্দ্র"],["mosque","লালবাগ কেল্লা ও আহসান মঞ্জিল","পুরান ঢাকার ঐতিহাসিক স্থাপত্য"],["scroll","সোনারগাঁও","প্রাচীন রাজধানী; লোকশিল্প জাদুঘর"],["flag","টুঙ্গিপাড়া, গোপালগঞ্জ","বঙ্গবন্ধুর জন্মস্থান"],["waves","পদ্মা সেতু","মুন্সিগঞ্জ ও শরীয়তপুরকে যুক্ত করেছে"],["leaf","ভাওয়াল জাতীয় উদ্যান","গাজীপুরের বনাঞ্চল"]],
+ctg:[["waves","কক্সবাজার সৈকত","বিশ্বের দীর্ঘতম সমুদ্রসৈকতগুলোর একটি"],["compass","সেন্টমার্টিন","দেশের একমাত্র প্রবালদ্বীপ"],["globe","চট্টগ্রাম সমুদ্রবন্দর","দেশের প্রধান বন্দর"],["leaf","কাপ্তাই হ্রদ ও সাজেক","রাঙ্গামাটির পাহাড়-হ্রদ"],["moon","বান্দরবানের পাহাড়","নীলগিরি, নাফাখুম, দেশের সর্বোচ্চ শৃঙ্গের অঞ্চল"],["book","ময়নামতি","কুমিল্লার বৌদ্ধ প্রত্নস্থান"]],
+rajshahi:[["leaf","আম","রাজশাহী ও চাঁপাইনবাবগঞ্জের বিখ্যাত ফল"],["star","রেশম","রাজশাহীর ঐতিহ্যবাহী শিল্প"],["mosque","পাহাড়পুর বৌদ্ধবিহার","নওগাঁ · ইউনেস্কো বিশ্ব ঐতিহ্য"],["scroll","মহাস্থানগড়","বগুড়ার প্রাচীন নগর-দুর্গ"],["waves","যমুনা সেতু","সিরাজগঞ্জ-টাঙ্গাইল সংযোগ"],["school","নাটোর রাজবাড়ী","ঐতিহাসিক জমিদারবাড়ি"]],
+khulna:[["leaf","সুন্দরবন","বিশ্বের বৃহত্তম ম্যানগ্রোভ বন (ইউনেস্কো)"],["mosque","ষাটগম্বুজ মসজিদ","বাগেরহাট · ইউনেস্কো বিশ্ব ঐতিহ্য"],["bag","বেনাপোল স্থলবন্দর","যশোর · ভারত সীমান্তের প্রধান স্থলবন্দর"],["pen","শিলাইদহ কুঠিবাড়ি","কুষ্টিয়া · রবীন্দ্রনাথের স্মৃতি"],["flag","মুজিবনগর","মেহেরপুর · ১৯৭১-এর প্রথম সরকার গঠন"],["coin","চিংড়ি","খুলনা-সাতক্ষীরার প্রধান রপ্তানি পণ্য"]],
+barishal:[["waves","কুয়াকাটা","পটুয়াখালী · সূর্যোদয় ও সূর্যাস্ত দেখার সৈকত"],["leaf","ভাসমান পেয়ারা বাজার","পিরোজপুর (ভীমরুলী)"],["map","দুর্গাসাগর দীঘি","বরিশালের বড় ঐতিহাসিক দীঘি"],["compass","ভোলা","দেশের বৃহত্তম দ্বীপ জেলা"],["waves","কীর্তনখোলা নদী","বরিশাল শহরের নদী"]],
+sylhet:[["mosque","শাহজালালের মাজার","সিলেট শহরের প্রসিদ্ধ স্থান"],["leaf","চা-বাগান","শ্রীমঙ্গল, মৌলভীবাজার — চায়ের রাজধানী"],["waves","জাফলং ও মাধবকুণ্ড","ঝরনা ও পাহাড়ি নদী"],["leaf","রাতারগুল","জলাবন (সোয়াম্প ফরেস্ট)"],["waves","টাঙ্গুয়ার হাওর","সুনামগঞ্জ · রামসার সাইট"],["leaf","লাউয়াছড়া ও সাতছড়ি","জাতীয় উদ্যান"]],
+rangpur:[["compass","তেঁতুলিয়া","পঞ্চগড় · দেশের সর্ব-উত্তর"],["bag","বাংলাবান্ধা স্থলবন্দর","পঞ্চগড়"],["waves","তিস্তা ব্যারাজ","লালমনিরহাট"],["mosque","কান্তজিউ মন্দির","দিনাজপুর · টেরাকোটা অলংকরণ"],["school","তাজহাট জমিদারবাড়ি","রংপুর · এখন জাদুঘর"],["bolt","সৈয়দপুর","নীলফামারী · রেলওয়ে কারখানা ও বিমানবন্দর"]],
+mymensingh:[["waves","ব্রহ্মপুত্র নদ","বিভাগের প্রধান নদ"],["grad","বাংলাদেশ কৃষি বিশ্ববিদ্যালয়","ময়মনসিংহ"],["leaf","মধুটিলা ইকোপার্ক","শেরপুর · গারো পাহাড়ের কোলে"],["star","বিজয়পুরের সাদা মাটি","নেত্রকোণা · সাদা মাটির পাহাড়"],["scroll","নকশিকাঁথা","জামালপুরের ঐতিহ্যবাহী কারুশিল্প"],["waves","হাওর অঞ্চল","নেত্রকোণা ও কিশোরগঞ্জ এলাকা"]]
+};
 
 /* =====================================================================
    ৪. রেন্ডার লজিক
@@ -455,7 +475,7 @@ $('#ham').innerHTML=svg('menu');$('#ico-coll').innerHTML=svg('chevL');
 
 /* ---------- সাইডবার ---------- */
 function sidebar(){
-  const a=cur(),keep=sb.scrollTop;
+  let a=cur();if(/^(div|dis)-/.test(a))a='bd';const keep=sb.scrollTop;
   let h=`<div class="item ${!a?'on':''}"><button class="row" data-go="" title="হোম">${svg('home')}<span class="lbl">হোম</span></button></div>`;
   GROUPS.forEach(g=>{
     h+=`<div class="gl">${g[0]}</div>`;
@@ -488,60 +508,48 @@ function home(){
 }
 
 
-/* ---------- বাংলাদেশ ম্যাপ হাব ---------- */
-const dvById=id=>DIV.find(d=>d[0]===id);
+/* ---------- বাংলাদেশ: ক্যাটাগরির বাড়তি অংশ, বিভাগ ও জেলার পাতা ---------- */
+const dvById=id=>DIST&&DIV.find(d=>d[0]===id);
+const itile=(ic,v,l)=>`<div class="stat"><span class="ic">${svg(ic)}</span><div><b>${v}</b><small>${l}</small></div></div>`;
+const FIC=['pin','map','users','layers','lang','flag','mic','star','compass','waves','shield','target'];
+const mapBox=(q,z)=>`<iframe title="ম্যাপ" loading="lazy" src="${gm(q,z)}"></iframe><p class="crumb" style="margin-top:4px">ম্যাপ না দেখা গেলে (অ্যাপের প্রিভিউয়ে আটকে যেতে পারে) <a href="${gl(q)}" target="_blank" rel="noopener">নতুন ট্যাবে ম্যাপ খুলুন ↗</a> বা ফাইলটি Chrome-এ খুলুন।</p>`;
+const totUp=id=>DIST.filter(x=>!id||x[2]===id).reduce((n,x)=>n+x[8],0);
 function bdHub(){
-  const rows=DIST.map((d,i)=>`<tr class="r" data-di="${i}"><td><b>${d[0]}</b> <small style="color:var(--mut)">${d[1]}</small></td><td>${dvById(d[2])[1]}</td><td>${fa(d[3])}</td><td>${fp(d[4])}</td><td>${dens(d[4],d[3])}</td><td class="n">${d[7]}</td></tr>`).join('');
-  return sh('বাংলাদেশ এক নজরে','Bangladesh at a glance')+`<div class="fx">${BD_FACTS.map(f=>`<div><small>${f[0]}</small><b>${f[1]}</b></div>`).join('')}</div>`
-  +sh('ইন্টারেক্টিভ ম্যাপ','বিভাগ বা জেলা বেছে নিন')
-  +`<div class="chips" id="dvc"><button class="chip on" data-dv="">সম্পূর্ণ বাংলাদেশ</button>${DIV.map(d=>`<button class="chip" data-dv="${d[0]}">${d[1]}</button>`).join('')}</div>`
-  +`<div id="dinfo"></div><div class="chips" id="dsc"></div>`
-  +`<iframe id="mf" title="ম্যাপ" loading="lazy" src="${osm(BDALL)}"></iframe>`
-  +`<p class="crumb" style="margin-top:4px">ম্যাপ: OpenStreetMap · <a id="bigmap" href="https://www.openstreetmap.org/#map=7/23.7/90.4" target="_blank" rel="noopener">বড় ম্যাপে খুলুন ↗</a></p>`
-  +sh('সব বিভাগ','৮টি')+`<div class="dtw"><table><tr><th>বিভাগ</th><th>রাজধানী</th><th>জেলা</th><th>আয়তন</th><th>জনসংখ্যা</th><th>ঘনত্ব</th><th>প্রতিষ্ঠা</th></tr>${DIV.map(d=>`<tr class="r" data-dr="${d[0]}"><td><b>${d[1]}</b> <small style="color:var(--mut)">${d[2]}</small></td><td>${d[3]}</td><td>${bn(DIST.filter(x=>x[2]===d[0]).length)}</td><td>${fa(d[4])}</td><td>${fp(d[5])}</td><td>${dens(d[5],d[4])}</td><td>${d[6]}</td></tr>`).join('')}</table></div>`
-  +sh('সব জেলা (৬৪)','নামে চাপলে ম্যাপে দেখুন')+`<input class="dsearch" id="dsr" type="search" placeholder="জেলা খুঁজুন…" aria-label="জেলা খুঁজুন"><div class="dtw dtwh"><table id="dtb"><tr><th>জেলা</th><th>বিভাগ</th><th>আয়তন</th><th>জনসংখ্যা</th><th>ঘনত্ব</th><th>বিশেষত্ব</th></tr>${rows}</table></div>`
-  +`<p class="crumb" style="margin-top:6px">জনসংখ্যা: ২০২২ আদমশুমারি অনুযায়ী (উইকিপিডিয়ার সারণি); আয়তনও সূত্রভেদে সামান্য ভিন্ন হতে পারে। ম্যাপের অবস্থান আনুমানিক।</p>`;
+  const dr=DIV.map(d=>`<tr class="r" data-go="div-${d[0]}"><td><b>${d[1]}</b> <small style="color:var(--mut)">${d[2]}</small></td><td>${d[3]}</td><td>${bn(DIST.filter(x=>x[2]===d[0]).length)}</td><td>${bn(totUp(d[0]))}</td><td>${fa(d[4])}</td><td>${fp(d[5])}</td><td>${dens(d[5],d[4])}</td><td>${d[6]}</td></tr>`).join('');
+  const rows=DIST.map((d,i)=>`<tr class="r" data-go="dis-${i}"><td><b>${d[0]}</b> <small style="color:var(--mut)">${d[1]}</small></td><td>${dvById(d[2])[1]}</td><td>${bn(d[8])}</td><td>${fa(d[3])}</td><td>${fp(d[4])}</td><td>${dens(d[4],d[3])}</td><td class="n">${d[7]}</td></tr>`).join('');
+  return sh('বাংলাদেশ এক নজরে','Bangladesh at a glance')
+   +`<div class="sg2">${itile('layers','৮টি','বিভাগ')}${itile('pin','৬৪টি','জেলা')}${itile('map',bn(totUp()||0)+'টি','উপজেলা (মোট)')}${BD_FACTS.map((f,i)=>itile(FIC[i%FIC.length],f[1],f[0])).join('')}</div>`
+   +sh('সম্পূর্ণ বাংলাদেশ ম্যাপ','Map')+`<iframe title="ম্যাপ" loading="lazy" src="${gm('Bangladesh',7)}"></iframe><p class="crumb" style="margin-top:4px"><a href="${gl('Bangladesh')}" target="_blank" rel="noopener">নতুন ট্যাবে ম্যাপ খুলুন ↗</a></p>`;
 }
-function bdBind(){
-  const mf=$('#mf'),info=$('#dinfo'),dsc=$('#dsc'),big=$('#bigmap');
-  const setBig=(la,lo,z)=>big.href=`https://www.openstreetmap.org/#map=${z}/${la}/${lo}`;
-  const markDv=id=>view.querySelectorAll('[data-dv]').forEach(b=>b.classList.toggle('on',b.dataset.dv===id));
-  const showDv=id=>{
-    markDv(id);
-    if(!id){info.innerHTML='';dsc.innerHTML='';mf.src=osm(BDALL);setBig(23.7,90.4,7);return}
-    const d=dvById(id),ds=DIST.map((x,i)=>[x,i]).filter(x=>x[0][2]===id);
-    info.innerHTML=`<div class="di"><h3>${d[1]} বিভাগ<small>${d[2]} Division</small></h3><p>${d[8]}</p>
-     <div class="kv"><span>রাজধানী <b>${d[3]}</b></span><span>জেলা <b>${bn(ds.length)}টি</b></span><span>আয়তন <b>${fa(d[4])}</b></span><span>জনসংখ্যা <b>${fp(d[5])}</b></span><span>ঘনত্ব <b>${dens(d[5],d[4])}</b></span><span>বিভাগ গঠন <b>${d[6]}</b></span></div></div>`;
-    dsc.innerHTML=ds.map(x=>`<button class="chip" data-dd="${x[1]}">${x[0][0]}</button>`).join('');
-    dsc.querySelectorAll('[data-dd]').forEach(b=>b.onclick=()=>showDi(+b.dataset.dd,true));
-    mf.src=osm(d[7]);const m=d[7].split(',').map(Number);setBig(((m[1]+m[3])/2).toFixed(2),((m[0]+m[2])/2).toFixed(2),8);
-  };
-  const showDi=(i,keepRow)=>{
-    const d=DIST[i],dv=dvById(d[2]);markDv(d[2]);
-    if(!keepRow||!dsc.children.length||dsc.dataset.dv!==d[2]){
-      const ds=DIST.map((x,j)=>[x,j]).filter(x=>x[0][2]===d[2]);dsc.dataset.dv=d[2];
-      dsc.innerHTML=ds.map(x=>`<button class="chip" data-dd="${x[1]}">${x[0][0]}</button>`).join('');
-      dsc.querySelectorAll('[data-dd]').forEach(b=>b.onclick=()=>showDi(+b.dataset.dd,true));
-    }
-    dsc.querySelectorAll('[data-dd]').forEach(b=>b.classList.toggle('on',+b.dataset.dd===i));
-    info.innerHTML=`<div class="di"><h3>${d[0]} জেলা<small>${d[1]} · ${dv[1]} বিভাগ</small></h3><p>${d[7]}।</p>
-     <div class="kv"><span>বিভাগ <b>${dv[1]}</b></span><span>আয়তন <b>${fa(d[3])}</b></span><span>জনসংখ্যা <b>${fp(d[4])}</b></span><span>ঘনত্ব <b>${dens(d[4],d[3])}</b></span><span>অবস্থান <b>${bn(d[5].toFixed(2))}°উ, ${bn(d[6].toFixed(2))}°পূ</b></span></div>
-     <a data-back="${d[2]}">← ${dv[1]} বিভাগে ফিরুন</a></div>`;
-    const bb=`${d[6]-.3},${d[5]-.22},${d[6]+.3},${d[5]+.22}`;
-    mf.src=osm(bb,`${d[5]},${d[6]}`);setBig(d[5],d[6],11);
-    info.querySelector('[data-back]').onclick=e=>showDv(e.target.dataset.back);
-    mf.scrollIntoView({behavior:'smooth',block:'center'});
-  };
-  view.querySelectorAll('[data-dv]').forEach(b=>b.onclick=()=>showDv(b.dataset.dv));
-  view.querySelectorAll('tr[data-di]').forEach(r=>r.onclick=()=>showDi(+r.dataset.di));
-  view.querySelectorAll('tr[data-dr]').forEach(r=>r.onclick=()=>{showDv(r.dataset.dr);$('#dvc').scrollIntoView({behavior:'smooth',block:'start'})});
-  $('#dsr').oninput=e=>{const f=e.target.value.trim().toLowerCase();view.querySelectorAll('tr[data-di]').forEach(r=>{r.hidden=f&&!(DIST[r.dataset.di][0]+DIST[r.dataset.di][1]).toLowerCase().includes(f)})};
+function bdBind(){const q=$('#dsr');if(q)q.oninput=e=>{const f=e.target.value.trim().toLowerCase();view.querySelectorAll('tr[data-go^="dis-"]').forEach(r=>{const d=DIST[+r.dataset.go.slice(4)];r.hidden=f&&!(d[0]+d[1]).toLowerCase().includes(f)})}}
+const crumbs=a=>`<p class="crumb"><a data-go="">হোম</a> › ${a.map(x=>x[1]?`<a data-go="${x[1]}">${x[0]}</a>`:x[0]).join(' › ')}</p>`;
+function divPage(id){
+  const d=dvById(id);if(!d){home();return}
+  const ds=DIST.map((x,i)=>[x,i]).filter(x=>x[0][2]===id);
+  view.innerHTML=crumbs([['বাংলাদেশ','bd'],[d[1]+' বিভাগ']])
+   +`<div class="ph"><span class="ic big">${svg('pin')}</span><div><h2>${d[1]} বিভাগ</h2><small>${d[2]} Division</small></div></div>`
+   +`<div class="quote"><p class="qt">${d[8]}</p></div>`
+   +sh('এক নজরে','Overview')+`<div class="sg2">${itile('pin',d[3],'বিভাগীয় সদর')}${itile('layers',bn(ds.length)+'টি','জেলা')}${itile('map',bn(totUp(id))+'টি','উপজেলা')}${itile('target',fa(d[4]),'আয়তন')}${itile('users',fp(d[5]),'জনসংখ্যা')}${itile('chart',dens(d[5],d[4]),'জনঘনত্ব')}${itile('clock',d[6],'বিভাগ গঠন')}</div>`
+   +sh('জেলাসমূহ',bn(ds.length)+'টি')+`<div class="tl">${ds.map(x=>`<button class="tt" data-go="dis-${x[1]}"><span class="bx">${svg('pin')}</span><span><b>${x[0][0]}</b><small>${bn(x[0][8])}টি উপজেলা</small></span></button>`).join('')}</div>`
+   +sh('উল্লেখযোগ্য বিষয়','Highlights')+`<div class="sg2">${(NOTE[id]||[]).map(n=>itile(n[0],n[1],n[2])).join('')}</div>`
+   +sh('ম্যাপ','Map')+mapBox(d[2]+' Division, Bangladesh',8);
+}
+function disPage(i){
+  const d=DIST[i];if(!d){home();return}const dv=dvById(d[2]);
+  const sib=DIST.map((x,j)=>[x,j]).filter(x=>x[0][2]===d[2]&&x[1]!==i);
+  view.innerHTML=crumbs([['বাংলাদেশ','bd'],[dv[1]+' বিভাগ','div-'+d[2]],[d[0]+' জেলা']])
+   +`<div class="ph"><span class="ic big">${svg('pin')}</span><div><h2>${d[0]} জেলা</h2><small>${d[1]} District · ${dv[1]} বিভাগ</small></div></div>`
+   +`<div class="quote"><p class="qt">${d[7]}।</p></div>`
+   +sh('এক নজরে','Overview')+`<div class="sg2">${itile('layers',dv[1]+' বিভাগ','বিভাগ')}${itile('map',bn(d[8])+'টি','উপজেলা')}${itile('target',fa(d[3]),'আয়তন')}${itile('users',fp(d[4]),'জনসংখ্যা')}${itile('chart',dens(d[4],d[3]),'জনঘনত্ব')}${itile('compass',bn(d[5].toFixed(2))+'°উ, '+bn(d[6].toFixed(2))+'°পূ','আনুমানিক অবস্থান')}${itile('star',d[7],'উল্লেখযোগ্য বিষয়')}</div>`
+   +sh('ম্যাপ','Map')+mapBox(d[1]+' District, Bangladesh',10)
+   +sh(dv[1]+' বিভাগের অন্যান্য জেলা',bn(sib.length)+'টি')+`<div class="tl">${sib.map(x=>`<button class="tt" data-go="dis-${x[1]}"><span class="bx">${svg('pin')}</span><span><b>${x[0][0]}</b><small>${bn(x[0][8])}টি উপজেলা</small></span></button>`).join('')}</div>`;
 }
 
 /* ---------- বিভাগের পাতা ---------- */
 function page(c){
   let x='';
-  if(c.s==='map')x=bdHub();
+  if(c.s==='bd')x=bdHub();
+  if(c.s==='map')x=sh('ইন্টারেক্টিভ ম্যাপ','Map')+mapBox('Bangladesh',7);
   if(c.s==='quiz')x=sh('দ্রুত কুইজ','Quick Quiz')+`<div class="qz">`+QUIZ.map((z,i)=>`<div class="q"><b>${z.q}</b><div>${z.o.map((o,j)=>`<button class="chip" data-q="${i}" data-j="${j}">${o}</button>`).join('')}</div></div>`).join('')+`</div>`;
   const more=c.m&&c.m.length?`<div class="moreq"><button class="chip" id="mb">আরও কোটেশন দেখুন (${bn(c.m.length)})</button><div id="mq" hidden>${c.m.map(quoteBox).join('')}</div></div>`:'';
   view.innerHTML=`<p class="crumb"><a data-go="">হোম</a> › ${c.bn}</p>
@@ -549,7 +557,7 @@ function page(c){
    ${quoteBox(c.q)}${more}
    ${sh('সব টপিক',bn(c.t.length)+'টি')}<div class="tl">${c.t.map((_,i)=>topCard(c,i)).join('')}</div>${x}`;
   const mb=$('#mb');if(mb)mb.onclick=()=>{const q=$('#mq');q.hidden=!q.hidden;mb.textContent=q.hidden?`আরও কোটেশন দেখুন (${bn(c.m.length)})`:'কম দেখুন'};
-  if(c.s==='map')bdBind();
+  if(c.s==='bd')bdBind();
   view.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{
     const z=QUIZ[b.dataset.q],p=b.parentElement;p.querySelectorAll('.chip').forEach(y=>y.classList.remove('ok','no'));
     const ok=+b.dataset.j===z.a;b.classList.add(ok?'ok':'no');if(!ok)p.children[z.a].classList.add('ok')});
@@ -565,8 +573,33 @@ function results(f){
 }
 
 /* ---------- টপিকের পপআপ ---------- */
+
+/* ---------- বিশেষ টপিক (ম্যাপ বিভাগ): সরাসরি তথ্য দেখায় ---------- */
+const HIST=[["ষাটগম্বুজ মসজিদ","বাগেরহাট · ইউনেস্কো বিশ্ব ঐতিহ্য; খান জাহানের স্মৃতিবিজড়িত"],["পাহাড়পুর বৌদ্ধবিহার","নওগাঁ · ইউনেস্কো বিশ্ব ঐতিহ্য; উপমহাদেশের বৃহত্তম বৌদ্ধ বিহারগুলোর একটি"],["মহাস্থানগড়","বগুড়া · দেশের প্রাচীনতম নগর-দুর্গের নিদর্শনগুলোর একটি"],["ময়নামতি","কুমিল্লা · বৌদ্ধ বিহার ও প্রত্নস্থান"],["লালবাগ কেল্লা","ঢাকা · মুঘল আমলের দুর্গ"],["আহসান মঞ্জিল","ঢাকা · বুড়িগঙ্গা তীরের নবাববাড়ি, এখন জাদুঘর"],["সোনারগাঁও","নারায়ণগঞ্জ · প্রাচীন রাজধানী; লোকশিল্প জাদুঘর"],["ছোট সোনা মসজিদ","চাঁপাইনবাবগঞ্জ · সুলতানি আমলের স্থাপত্য"],["কান্তজিউ মন্দির","দিনাজপুর · টেরাকোটা অলংকরণের জন্য বিখ্যাত"],["তাজহাট জমিদারবাড়ি","রংপুর · জমিদার স্থাপত্য, এখন জাদুঘর"],["নাটোর রাজবাড়ী","নাটোর · উত্তরা গণভবন এলাকা"],["কুষ্টিয়া শিলাইদহ কুঠিবাড়ি","কুষ্টিয়া · রবীন্দ্রনাথ ঠাকুরের স্মৃতিবিজড়িত"]];
+const RIV=[["পদ্মা","গঙ্গার প্রধান ধারা; রাজশাহী থেকে চাঁদপুর পর্যন্ত। পদ্মা সেতু এর ওপর"],["যমুনা","ব্রহ্মপুত্রের নিম্নধারা; বঙ্গবন্ধু সেতু এর ওপর"],["মেঘনা","সিলেট-ময়মনসিংহ অঞ্চল থেকে বঙ্গোপসাগরে; ইলিশের জন্য পরিচিত"],["ব্রহ্মপুত্র","উত্তর-মধ্যাঞ্চলের প্রধান নদ"],["কর্ণফুলী","চট্টগ্রামের প্রধান নদী; কাপ্তাই বাঁধ এর ওপর"],["তিস্তা","উত্তরাঞ্চলের নদী; তিস্তা ব্যারাজ লালমনিরহাটে"],["সুরমা ও কুশিয়ারা","সিলেট অঞ্চলের প্রধান নদী; মিলে মেঘনা গঠন করে"],["মধুমতী","দক্ষিণ-পশ্চিমাঞ্চলের নদী; গোপালগঞ্জ-নড়াইল-বাগেরহাট অঞ্চলে"],["বুড়িগঙ্গা","ঢাকা শহরের পাশ দিয়ে বয়ে গেছে"],["শীতলক্ষ্যা","নারায়ণগঞ্জের গুরুত্বপূর্ণ নদী"]];
+function openInfo(t,en,ic,items,foot){
+  const m=$('#m');
+  m.innerHTML=`<span class="ic big">${svg(ic)}</span><h3>${t}</h3><p>${en}</p><ul style="margin:8px 0 8px 18px;text-align:left;max-height:50vh;overflow:auto">${items.map(i=>`<li style="margin:4px 0"><b>${i[0]}</b> — <span style="color:var(--mut)">${i[1]}</span></li>`).join('')}</ul>${foot||''}<button class="chip on cl" onclick="$('#m').close()">বন্ধ করুন</button>`;
+  m.showModal();
+}
+function jumpMap(a){
+  const go=()=>setTimeout(()=>{const e=$('#'+a);if(e)e.scrollIntoView({behavior:'smooth',block:'start'})},60);
+  if(cur()==='bd'){go();return}
+  location.hash='bd';setTimeout(go,50);
+}
+function runAct(a,c,t){
+  if(a==='bdmap'){location.hash='bd';return}
+  if(a==='atlas'){location.hash='bd';return}
+  if(a.startsWith('div-')){location.hash=a;return}
+  if(a==='hist'){openInfo(t[0],t[1]+' · বাংলাদেশের উল্লেখযোগ্য ঐতিহাসিক স্থান','mosque',HIST);return}
+  if(a==='rivers'){openInfo(t[0],t[1]+' · বাংলাদেশের প্রধান নদ-নদী','waves',RIV);return}
+  if(a==='world'){const m=$('#m');
+    m.innerHTML=`<span class="ic big">${svg('globe')}</span><h3>${t[0]}</h3><p>World Map</p><iframe title="বিশ্ব মানচিত্র" style="height:45vh;border-width:1.5px" src="${gm('World',1)}"></iframe><p style="margin:6px 0"><a href="${gl('World')}" target="_blank" rel="noopener">নতুন ট্যাবে খুলুন ↗</a></p><button class="chip on cl" onclick="$('#m').close()">বন্ধ করুন</button>`;
+    m.showModal()}
+}
 function openTopic(id,i){
   const c=byId(id),t=c.t[i],m=$('#m');
+  if(t[4]){runAct(t[4],c,t);return}
   m.innerHTML=`<span class="ic big">${svg(t[2])}</span><h3>${t[0]}</h3><p>${t[1]} · ${c.bn}</p>
   ${t[3]?`<ul>${t[3].map(l=>`<li><a href="${l.u}" target="_blank" rel="noopener">${l.t}</a></li>`).join('')}</ul>`:'<p>এই টপিকের নোট শীঘ্রই যোগ হবে।</p>'}
   <p class="qt" style="font-size:.95rem">${c.q[0]}</p><button class="chip on cl" onclick="$('#m').close()">বন্ধ করুন</button>`;
@@ -588,9 +621,9 @@ document.addEventListener('click',e=>{
 $('#q').oninput=e=>{const f=e.target.value.trim().toLowerCase();f?results(f):route()};
 
 function route(){
-  const c=C.find(x=>x.id===cur());
+  const h=cur(),c=C.find(x=>x.id===h);
   $('#q').value='';
-  c?page(c):home();
+  if(h.startsWith('div-'))divPage(h.slice(4));else if(h.startsWith('dis-'))disPage(+h.slice(4));else c?page(c):home();
   sidebar();scrollTo(0,0);
 }
 addEventListener('hashchange',route);
