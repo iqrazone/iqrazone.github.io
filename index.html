@@ -3,32 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0b0b0a">
+<meta name="theme-color" content="#ffffff">
 <title>IqraZone – জ্ঞানের আলোয় আলোকিত জীবন</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ===== ১. থিম (নতুন থিম যোগ করতে একটি [data-theme=নাম] ব্লক কপি করুন) ===== */
-:root,[data-theme=gold]{--bg:#0b0b0a;--card:#131312;--ink:#f4ecd8;--mut:#a79e89;--gold:#d4a22a;--gold2:#f1cf74;--glow:#d4a22a40;--hero:#d4a22a26;
---surf:#1a1914;--surf2:#15140f;--line:#2c2a22;--line2:#3a3526;--ga:#171612;--gb:#0f0f0e;
---ring:#d4a22a66;--tint:#d4a22a2e;--ongold:#17120a;--side:#0f0f0d;--dlg:#12120f;--mapf:invert(.92) hue-rotate(180deg) saturate(.7)}
-[data-theme=emerald]{--bg:#06130e;--card:#0c1e16;--ink:#e6f4ea;--mut:#8fb09d;--gold:#34c38f;--gold2:#8be9c0;--glow:#34c38f40;--hero:#34c38f22;
---surf:#10231a;--surf2:#0c1c14;--line:#1d3a2c;--line2:#25503b;--ga:#0f2419;--gb:#08150e;
---ring:#34c38f66;--tint:#34c38f2e;--ongold:#04150d;--side:#081a12;--dlg:#0a1a12;--mapf:invert(.92) hue-rotate(180deg) saturate(.7)}
-[data-theme=paper]{--bg:#fbf5e6;--card:#fffaf0;--ink:#2b2417;--mut:#6b604a;--gold:#b7791f;--gold2:#8a5a0b;--glow:#b7791f33;--hero:#e9c46a40;
---surf:#fff3d6;--surf2:#fffdf6;--line:#e4d6b0;--line2:#d9c690;--ga:#fffdf7;--gb:#fbf1d8;
---ring:#b7791f66;--tint:#b7791f22;--ongold:#fff8e6;--side:#fff6e0;--dlg:#fffaf0;--mapf:none}
-[data-theme=sapphire]{--bg:#060a14;--card:#0d1424;--ink:#e8eefc;--mut:#93a0bf;--gold:#5b9dff;--gold2:#a9ccff;--glow:#5b9dff40;--hero:#5b9dff26;
---surf:#101a30;--surf2:#0b1224;--line:#1e2c4d;--line2:#2a3b66;--ga:#0f1930;--gb:#070d1b;
---ring:#5b9dff66;--tint:#5b9dff2e;--ongold:#04101f;--side:#0a1226;--dlg:#0a1222;--mapf:invert(.92) hue-rotate(180deg) saturate(.7)}
-[data-theme=sepia]{--bg:#17110b;--card:#211810;--ink:#f3e6d3;--mut:#b3a187;--gold:#d08a4e;--gold2:#f0c08a;--glow:#d08a4e40;--hero:#d08a4e26;
---surf:#261b11;--surf2:#1f160e;--line:#3a2a1b;--line2:#4d3822;--ga:#241a10;--gb:#150f09;
---ring:#d08a4e66;--tint:#d08a4e2e;--ongold:#1c1005;--side:#1a120b;--dlg:#1b130c;--mapf:invert(.9) hue-rotate(180deg) saturate(.6)}
-
-:root{--font:'Hind Siliguri','Noto Sans Bengali',system-ui,sans-serif;--sw:292px}
+:root{--bg:#f4f7fc;--card:#ffffff;--ink:#1c2740;--mut:#62708c;--gold:#2f5bd8;--gold2:#2449b8;--glow:#2f5bd824;--hero:#2f5bd814;
+--surf:#eef3fc;--surf2:#ffffff;--line:#e4e9f3;--line2:#d4dcec;--ga:#ffffff;--gb:#f2f6fe;
+--ring:#2f5bd855;--tint:#2f5bd814;--ongold:#ffffff;--side:#ffffff;--dlg:#ffffff;--mapf:none}
+:root{--font:'Hind Siliguri','Noto Sans Bengali',system-ui,sans-serif;--sw:240px}
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;transition:background-color .3s,color .3s}
+html{scroll-behavior:smooth;font-size:13px}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.45;font-size:1rem;transition:background-color .3s,color .3s}
 body.collapsed{--sw:80px}
 button{font:inherit;color:inherit;cursor:pointer}
 :focus-visible{outline:3px solid var(--gold2);outline-offset:2px}
@@ -37,29 +23,29 @@ svg{fill:none;stroke:var(--gold2);stroke-width:1.7;stroke-linecap:round;stroke-l
 /* ===== ২. লেআউট: বাম সাইডবার + ডান কন্টেন্ট ===== */
 .shell{display:grid;grid-template-columns:var(--sw) 1fr;min-height:100vh;transition:grid-template-columns .25s}
 aside{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;background:var(--side);border-right:1px solid var(--line2);z-index:30}
-.brand{display:flex;align-items:center;gap:12px;padding:18px 16px 12px;cursor:pointer;background:none;border:0;text-align:left}
-.logo{width:44px;height:44px;flex:none;border-radius:14px;border:2px solid var(--gold);display:grid;place-items:center;background:var(--surf);box-shadow:0 0 12px var(--glow)}
-.logo svg{width:24px;height:24px}
+.brand{display:flex;align-items:center;gap:10px;padding:12px 12px 8px;cursor:pointer;background:none;border:0;text-align:left}
+.logo{width:36px;height:36px;flex:none;border-radius:14px;border:2px solid var(--gold);display:grid;place-items:center;background:var(--surf);box-shadow:0 0 12px var(--glow)}
+.logo svg{width:20px;height:20px}
 .brand b{font-size:1.3rem;line-height:1.1;display:block}
 .brand small{font-size:.72rem;color:var(--mut);font-weight:400;display:block}
-.sb{flex:1;overflow-y:auto;padding:6px 10px 12px;scrollbar-width:thin;scrollbar-color:var(--line2) transparent}
-.gl{font-size:.72rem;letter-spacing:.04em;color:var(--mut);padding:16px 12px 6px;text-transform:uppercase}
-.item{display:flex;align-items:center;gap:8px;border-radius:14px;margin-bottom:2px}
-.item>button.row{flex:1;display:flex;align-items:center;gap:12px;min-width:0;background:none;border:0;padding:9px 12px;border-radius:14px;text-align:left;color:var(--mut)}
-.item svg{width:20px;height:20px;flex:none;stroke:currentColor}
+.sb{flex:1;overflow-y:auto;padding:4px 8px 8px;scrollbar-width:thin;scrollbar-color:var(--line2) transparent}
+.gl{font-size:.72rem;letter-spacing:.04em;color:var(--mut);padding:10px 10px 3px;text-transform:uppercase}
+.item{display:flex;align-items:center;gap:8px;border-radius:14px;margin-bottom:0}
+.item>button.row{flex:1;display:flex;align-items:center;gap:9px;min-width:0;background:none;border:0;padding:6px 10px;border-radius:10px;text-align:left;color:var(--mut)}
+.item svg{width:17px;height:17px;flex:none;stroke:currentColor}
 .item .lbl{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:.95rem}
 .item:hover>button.row{background:var(--surf);color:var(--ink)}
 .item.on>button.row{background:var(--tint);color:var(--gold2);font-weight:600;box-shadow:inset 3px 0 0 var(--gold)}
-.chev{width:30px;height:30px;flex:none;border:0;background:none;display:grid;place-items:center;border-radius:10px;color:var(--mut)}
+.chev{width:24px;height:24px;flex:none;border:0;background:none;display:grid;place-items:center;border-radius:10px;color:var(--mut)}
 .chev:hover{background:var(--surf)}
-.chev svg{width:16px;height:16px;transition:transform .2s}
+.chev svg{width:13px;height:13px;transition:transform .2s}
 .item.open .chev svg{transform:rotate(90deg)}
-.sub{margin:0 0 6px 24px;padding-left:12px;border-left:1px dashed var(--line2)}
-.sub button{display:flex;align-items:center;gap:10px;width:100%;background:none;border:0;padding:6px 10px;border-radius:10px;color:var(--mut);font-size:.88rem;text-align:left}
+.sub{margin:0 0 4px 18px;padding-left:8px;border-left:1px dashed var(--line2)}
+.sub button{display:flex;align-items:center;gap:8px;width:100%;background:none;border:0;padding:4px 8px;border-radius:10px;color:var(--mut);font-size:.88rem;text-align:left}
 .sub button:hover{background:var(--surf);color:var(--ink)}
-.sub svg{width:16px;height:16px;stroke:currentColor;flex:none}
-.sbf{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line)}
-.sbf button{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:10px;border-radius:14px;border:1px solid var(--line2);background:var(--surf);font-size:.88rem}
+.sub svg{width:14px;height:14px;stroke:currentColor;flex:none}
+.sbf{display:flex;gap:8px;padding:8px;border-top:1px solid var(--line)}
+.sbf button{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:7px;border-radius:10px;border:1px solid var(--line2);background:var(--surf);font-size:.88rem}
 .sbf svg{width:18px;height:18px}
 .coll-btn svg{transition:transform .25s}
 body.collapsed .coll-btn svg{transform:rotate(180deg)}
@@ -74,71 +60,69 @@ body.collapsed .coll-btn svg{transform:rotate(180deg)}
 }
 
 /* ===== ৩. টপ বার ===== */
-main{min-width:0;padding:0 28px 60px;background-image:radial-gradient(circle at 90% -5%,var(--hero),transparent 40%);background-repeat:no-repeat}
-.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:12px;padding:14px 0;background:linear-gradient(var(--bg) 70%,transparent);backdrop-filter:blur(6px)}
-.ham{display:none;width:44px;height:44px;border-radius:14px;border:1px solid var(--line2);background:var(--surf);place-items:center;flex:none}
+main{min-width:0;padding:0 20px 40px;background-image:radial-gradient(circle at 90% -5%,var(--hero),transparent 40%);background-repeat:no-repeat}
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px;padding:8px 0;background:linear-gradient(var(--bg) 70%,transparent);backdrop-filter:blur(6px)}
+.ham{display:none;width:38px;height:38px;border-radius:14px;border:1px solid var(--line2);background:var(--surf);place-items:center;flex:none}
 .ham svg{width:22px;height:22px}
 .sbox{flex:1;position:relative;max-width:520px}
-.sbox svg{position:absolute;left:14px;top:50%;translate:0 -50%;width:20px;height:20px}
-#q{width:100%;padding:11px 16px 11px 44px;border-radius:16px;border:1px solid var(--line2);background:var(--surf2);color:var(--ink);font:inherit}
-.chips-top{margin-left:auto;display:flex;align-items:center;gap:10px}
-.clk{font-weight:600;color:var(--gold2);border:1px solid var(--ring);border-radius:14px;padding:5px 14px;background:var(--tint);white-space:nowrap}
+.sbox svg{position:absolute;left:12px;top:50%;translate:0 -50%;width:17px;height:17px}
+#q{width:100%;padding:7px 14px 7px 38px;border-radius:12px;border:1px solid var(--line2);background:var(--surf2);color:var(--ink);font:inherit}
 .ibtn{width:44px;height:44px;border-radius:14px;border:1px solid var(--line2);background:var(--surf);display:grid;place-items:center}
 .ibtn svg{width:22px;height:22px}
 
 /* ===== ৪. হোম ===== */
-.hello{margin:8px 0 18px}
+.hello{margin:2px 0 10px}
 .hello p{color:var(--mut)}
-.hello h2{font-size:1.5rem;font-weight:600;line-height:1.3}
+.hello h2{font-size:1.3rem;font-weight:600;line-height:1.3}
 .hello .dt{font-size:.9rem;color:var(--mut)}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
-.stat{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line2);border-radius:18px;padding:14px}
-.stat .ic{width:46px;height:46px;border-radius:14px}
-.stat b{font-size:1.5rem;line-height:1;display:block}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px}
+.stat{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line2);border-radius:14px;padding:9px 12px}
+.stat .ic{width:34px;height:34px;border-radius:10px}
+.stat b{font-size:1.25rem;line-height:1;display:block}
 .stat small{color:var(--mut);font-size:.8rem}
-.ic{display:grid;place-items:center;flex:none;width:48px;height:48px;border-radius:16px;border:1.5px solid var(--gold);background:var(--tint);box-shadow:0 0 12px var(--glow)}
+.ic{display:grid;place-items:center;flex:none;width:38px;height:38px;border-radius:12px;border:1.5px solid var(--gold);background:var(--tint);box-shadow:0 0 12px var(--glow)}
 .ic svg{width:48%;height:48%}
-.ic.big{width:72px;height:72px;border-radius:22px;border-width:2px}
-.card{border:1.5px solid var(--gold);border-radius:22px;background:linear-gradient(180deg,var(--ga),var(--gb));padding:18px 20px;box-shadow:0 0 22px var(--glow)}
-.card .row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;color:var(--mut);font-size:.9rem}
-.qt{font-size:1.12rem;line-height:1.7}
-.qt cite{display:block;margin-top:6px;color:var(--gold);font-size:.88rem;font-style:normal}
-.sh{display:flex;justify-content:space-between;align-items:baseline;margin:30px 0 14px}
-.sh h2{font-size:1.35rem;font-weight:600}
+.ic.big{width:54px;height:54px;border-radius:16px;border-width:2px}
+.card{border:1.5px solid var(--gold);border-radius:16px;background:linear-gradient(180deg,var(--ga),var(--gb));padding:11px 16px;box-shadow:0 0 22px var(--glow)}
+.card .row{display:flex;justify-content:space-between;align-items:center;margin-bottom:3px;color:var(--mut);font-size:.9rem}
+.qt{font-size:1.05rem;line-height:1.5}
+.qt cite{display:block;margin-top:2px;color:var(--gold);font-size:.85rem;font-style:normal}
+.sh{display:flex;justify-content:space-between;align-items:baseline;margin:16px 0 8px}
+.sh h2{font-size:1.15rem;font-weight:600}
 .sh span{color:var(--mut);font-size:.9rem}
 
 /* ক্যাটাগরি কার্ড */
-.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
-.cc{display:flex;flex-direction:column;gap:10px;text-align:left;background:var(--card);border:1px solid var(--line2);border-radius:20px;padding:16px;transition:transform .2s,box-shadow .2s,border-color .2s}
+.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.cc{display:flex;flex-direction:column;gap:6px;text-align:left;background:var(--card);border:1px solid var(--line2);border-radius:14px;padding:10px 12px;transition:transform .2s,box-shadow .2s,border-color .2s}
 .cc:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 8px 26px var(--glow)}
-.cc .h{display:flex;align-items:center;gap:12px}
-.cc b{display:block;font-size:1.02rem;line-height:1.3}
+.cc .h{display:flex;align-items:center;gap:9px}
+.cc b{display:block;font-size:.98rem;line-height:1.3}
 .cc small{color:var(--mut);font-size:.78rem}
-.cc .tags{display:flex;flex-wrap:wrap;gap:6px}
-.cc .tags i{font-style:normal;font-size:.76rem;padding:2px 10px;border-radius:999px;background:var(--surf);border:1px solid var(--line2);color:var(--mut)}
+.cc .tags{display:flex;flex-wrap:wrap;gap:4px}
+.cc .tags i{font-style:normal;font-size:.74rem;padding:0 8px;border-radius:999px;background:var(--surf);border:1px solid var(--line2);color:var(--mut)}
 .cc .cnt{margin-top:auto;font-size:.8rem;color:var(--gold2)}
 
 /* ===== ৫. ভেতরের পাতা ===== */
-.crumb{color:var(--mut);font-size:.88rem;margin:6px 0 0}
+.crumb{color:var(--mut);font-size:.85rem;margin:2px 0 0}
 .crumb a{color:var(--gold2);cursor:pointer}
-.ph{display:flex;align-items:center;gap:16px;margin:14px 0 18px}
-.ph h2{font-size:1.8rem;line-height:1.2}.ph small{color:var(--mut)}
-.quote{position:relative;border:1.5px solid var(--gold);border-radius:22px;padding:18px 18px 16px 54px;background:var(--surf2);box-shadow:0 0 18px var(--glow);margin-bottom:6px}
-.quote::before{content:"“";position:absolute;left:14px;top:-2px;font-size:4rem;color:var(--gold);line-height:1}
-.tg{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
-.tc{display:flex;align-items:center;gap:12px;text-align:left;background:var(--card);border:1px solid var(--line2);border-radius:18px;padding:12px 14px;transition:.2s}
+.ph{display:flex;align-items:center;gap:12px;margin:8px 0 10px}
+.ph h2{font-size:1.5rem;line-height:1.2}.ph small{color:var(--mut)}
+.quote{position:relative;border:1.5px solid var(--gold);border-radius:16px;padding:10px 14px 9px 44px;background:var(--surf2);box-shadow:0 0 18px var(--glow);margin-bottom:6px}
+.quote::before{content:"“";position:absolute;left:12px;top:-4px;font-size:3rem;color:var(--gold);line-height:1}
+.tg{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px}
+.tc{display:flex;align-items:center;gap:9px;text-align:left;background:var(--card);border:1px solid var(--line2);border-radius:12px;padding:7px 10px;transition:.2s}
 .tc:hover{border-color:var(--gold);background:var(--tint);transform:translateY(-2px)}
-.tc .ic{width:42px;height:42px;border-radius:13px;box-shadow:none}
-.tc b{display:block;font-size:.98rem;font-weight:500;line-height:1.3}
+.tc .ic{width:32px;height:32px;border-radius:10px;box-shadow:none}
+.tc b{display:block;font-size:.95rem;font-weight:500;line-height:1.3}
 .tc small{color:var(--mut);font-size:.76rem}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
-.chip{border:1px solid var(--ring);background:var(--surf2);padding:6px 14px;border-radius:999px;font-size:.9rem}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.chip{border:1px solid var(--ring);background:var(--surf2);padding:3px 11px;border-radius:999px;font-size:.88rem}
 .chip.on,.chip.ok{background:var(--gold);color:var(--ongold);border-color:var(--gold)}.chip.no{background:#a93a32;color:#fff;border-color:#a93a32}
-iframe{width:100%;height:min(58vh,460px);border:2px solid var(--gold);border-radius:22px;box-shadow:0 0 18px var(--glow);filter:var(--mapf)}
-.qz{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
-.q{border:1px solid var(--line2);border-radius:18px;padding:14px;background:var(--card)}
-.q div{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-.moreq{margin-top:12px}.moreq .quote{margin-top:12px}
+iframe{width:100%;height:min(52vh,400px);border:2px solid var(--gold);border-radius:22px;box-shadow:0 0 18px var(--glow);filter:var(--mapf)}
+.qz{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px}
+.q{border:1px solid var(--line2);border-radius:12px;padding:9px 11px;background:var(--card)}
+.q div{display:flex;flex-wrap:wrap;gap:6px;margin-top:5px}
+.moreq{margin-top:8px}.moreq .quote{margin-top:8px}
 .empty{color:var(--mut);padding:30px 0;text-align:center}
 
 /* ===== ৬. পপআপ ও থিম ===== */
@@ -148,10 +132,6 @@ dialog .ic{margin:0 auto 12px}
 dialog h3{text-align:center}dialog p{color:var(--mut);margin:10px 0;text-align:center}
 dialog ul{margin:10px 0 10px 20px}dialog a{color:var(--gold2)}
 .cl{display:block;margin:14px auto 0}
-.thl{display:grid;gap:10px;margin-top:14px}
-.th{display:flex;align-items:center;gap:12px;width:100%;padding:10px 14px;border-radius:16px;border:1px solid var(--line2);background:var(--surf2);text-align:left}
-.th.on{border-color:var(--gold);background:var(--tint)}
-.sw{width:34px;height:34px;border-radius:50%;border:2px solid;flex:none}
 .ov{display:none}
 
 /* ===== ৭. মোবাইল ===== */
@@ -163,7 +143,6 @@ dialog ul{margin:10px 0 10px 20px}dialog a{color:var(--gold2)}
  .ham{display:grid}
  main{padding:0 16px 40px}
  .stats{grid-template-columns:repeat(2,1fr)}
- .clk{display:none}
  .coll-btn{display:none}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -175,7 +154,6 @@ dialog ul{margin:10px 0 10px 20px}dialog a{color:var(--gold2)}
   <button class="brand" data-go=""><span class="logo" id="logo"></span><div><b>IqraZone</b><small>জ্ঞানের আলোয় আলোকিত জীবন</small></div></button>
   <nav class="sb" id="sb"></nav>
   <div class="sbf">
-   <button data-themes aria-label="থিম বদলান"><span id="ico-pal"></span><span class="t">থিম</span></button>
    <button class="coll-btn" data-coll aria-label="সাইডবার ছোট/বড় করুন"><span id="ico-coll"></span><span class="t">ছোট করুন</span></button>
   </div>
  </aside>
@@ -184,7 +162,6 @@ dialog ul{margin:10px 0 10px 20px}dialog a{color:var(--gold2)}
   <div class="topbar">
    <button class="ham" data-menu aria-label="মেনু খুলুন" id="ham"></button>
    <div class="sbox"><span id="ico-s"></span><input id="q" type="search" placeholder="খুঁজুন: কুরআন, বিসিএস, ব্যাকরণ…" aria-label="সার্চ"></div>
-   <div class="chips-top"><div class="clk" id="clk"></div></div>
   </div>
   <div id="view"></div>
  </main>
@@ -242,23 +219,6 @@ sprout:"M12 22v-9 M12 13c0-4-3-6-7-6 0 4 3 6 7 6z M12 11c0-3 2-5 6-5 0 3-2 5-6 5
 brain:"M9 4a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 6 1V4a3 3 0 0 0-3 0z M15 4a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-6 1"
 };
 const svg=(n,s)=>`<svg viewBox="0 0 24 24"${s?` width="${s}" height="${s}"`:''}><path d="${I[n]}"/></svg>`;
-
-/* ===== ২. থিম তালিকা: [id, নাম, ব্যাকগ্রাউন্ড, অ্যাকসেন্ট] ===== */
-const TH=[
- ['gold','সোনালি রাত','#0b0b0a','#d4a22a'],
- ['emerald','ইসলামিক সবুজ','#06130e','#34c38f'],
- ['paper','দিনের আলো','#fbf5e6','#b7791f'],
- ['sapphire','নীল আকাশ','#060a14','#5b9dff'],
- ['sepia','লাইব্রেরি সেপিয়া','#17110b','#d08a4e']
-];
-function applyTheme(id){
-  const t=TH.find(x=>x[0]===id)||TH[0];
-  document.documentElement.dataset.theme=t[0];
-  document.querySelector('meta[name=theme-color]').content=t[2];
-  try{localStorage.setItem('iz-theme',t[0])}catch(e){}
-}
-let savedTheme='gold';try{savedTheme=localStorage.getItem('iz-theme')||'gold'}catch(e){}
-applyTheme(savedTheme);
 
 /* =====================================================================
    ৩. মূল ডেটা – পুরো সাইটের কন্টেন্ট এখানে
@@ -358,7 +318,7 @@ const cur=()=>location.hash.slice(1);
 const open=new Set();   // সাইডবারে কোন বিভাগ খোলা
 
 /* স্থির আইকনগুলো */
-$('#logo').innerHTML=svg('quran');$('#ico-pal').innerHTML=svg('palette');$('#ico-s').innerHTML=svg('search');
+$('#logo').innerHTML=svg('quran');$('#ico-s').innerHTML=svg('search');
 $('#ham').innerHTML=svg('menu');$('#ico-coll').innerHTML=svg('chevL');
 
 /* ---------- সাইডবার ---------- */
@@ -389,11 +349,10 @@ const sh=(a,b)=>`<div class="sh"><h2>${a}</h2><span>${b||''}</span></div>`;
 function home(){
   const dq=C[new Date().getDate()%C.length].q,topics=C.reduce((n,c)=>n+c.t.length,0);
   const stat=(ic,n,l)=>`<div class="stat"><span class="ic">${svg(ic)}</span><div><b>${bn(n)}</b><small>${l}</small></div></div>`;
-  view.innerHTML=`<div class="hello"><p>আসসালামু আলাইকুম</p><h2 id="dt"></h2><div class="dt" id="hj"></div></div>
+  view.innerHTML=`<div class="hello"><p>আসসালামু আলাইকুম</p><h2>আজ কী শিখতে চান?</h2></div>
    <div class="stats">${stat('layers',C.length,'বিভাগ')}${stat('book',topics,'টপিক')}${stat('check',QUIZ.length,'কুইজ প্রশ্ন')}${stat('map',REG.length,'ম্যাপ অঞ্চল')}</div>
    <div class="card"><div class="row"><span>আজকের অনুপ্রেরণা</span></div><p class="qt">${dq[0]}<cite>— ${dq[1]}</cite></p></div>
    ${GROUPS.map(g=>sh(g[0],g[1])+`<div class="cg">${g[2].map(id=>catCard(byId(id))).join('')}</div>`).join('')}`;
-  tick();
 }
 
 /* ---------- বিভাগের পাতা ---------- */
@@ -431,31 +390,10 @@ function openTopic(id,i){
   m.showModal();
 }
 
-/* ---------- থিম বাছাই ---------- */
-function openThemes(){
-  const now=document.documentElement.dataset.theme,m=$('#m');
-  m.innerHTML=`<h3>থিম বেছে নিন</h3><p>আপনার পছন্দের রং নির্বাচন করুন</p>
-  <div class="thl">${TH.map(t=>`<button class="th ${t[0]===now?'on':''}" data-th="${t[0]}"><span class="sw" style="background:${t[2]};border-color:${t[3]};box-shadow:inset 0 0 0 6px ${t[2]},inset 0 0 0 20px ${t[3]}"></span>${t[1]}</button>`).join('')}</div>
-  <button class="chip on cl" onclick="$('#m').close()">বন্ধ করুন</button>`;
-  m.showModal();
-}
-
-/* ---------- তারিখ ও ঘড়ি ---------- */
-function tick(){
-  const d=new Date(),c=$('#clk');
-  if(c)c.textContent=d.toLocaleTimeString('bn-BD',{hour:'numeric',minute:'2-digit',second:'2-digit'});
-  const dt=$('#dt');if(!dt)return;
-  dt.textContent=d.toLocaleDateString('bn-BD',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
-  try{$('#hj').textContent=new Intl.DateTimeFormat('bn-u-ca-islamic-umalqura',{day:'numeric',month:'long',year:'numeric'}).format(d)+' হিজরি'}catch(e){}
-}
-setInterval(tick,1000);
-
 /* ---------- ক্লিক হ্যান্ডলার ও রাউটার ---------- */
 const closeMenu=()=>document.body.classList.remove('menu');
 document.addEventListener('click',e=>{
   const T=s=>e.target.closest(s);
-  if(T('[data-th]')){applyTheme(T('[data-th]').dataset.th);openThemes();return}
-  if(T('[data-themes]')){closeMenu();openThemes();return}
   if(T('[data-menu]')){document.body.classList.add('menu');return}
   if(T('[data-menu-close]')){closeMenu();return}
   if(T('[data-coll]')){const b=document.body;b.classList.toggle('collapsed');try{localStorage.setItem('iz-coll',b.classList.contains('collapsed')?1:'')}catch(x){}return}
